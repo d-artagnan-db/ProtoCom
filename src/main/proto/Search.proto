@@ -1,0 +1,45 @@
+package protocommunication;
+
+option java_package = "pt.uminho.haslab.protocommunication";
+option optimize_for = SPEED;
+
+
+/**
+ * Message used to exchange shares between region servers when
+ * running protocols.
+*/
+
+
+
+message ShareMessage{
+    required bytes requestID = 1;
+    required bytes regionID = 2;
+    required sfixed32 playerSource = 3;
+    required sfixed32 playerDest = 4;
+    repeated bytes values = 5;
+}
+
+
+message ResultsMessage{
+    required bytes requestID = 1;
+    required bytes regionID = 2;
+    required sfixed32 playerSource = 3;
+    required sfixed32 playerDest = 4;
+    repeated bytes values = 5;
+    repeated bytes secretID = 6;
+}
+
+message FilterIndexMessage{
+    required bytes requestID = 1;
+    required bytes regionID = 2;
+    required sfixed32 playerSource = 3;
+    required sfixed32 playerDest = 4;
+    repeated bytes indexes = 5;
+
+    
+}
+
+
+message Shutdown{
+	
+}
