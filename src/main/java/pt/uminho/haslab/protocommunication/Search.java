@@ -8,6 +8,413 @@ public final class Search {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistry registry) {
   }
+  public interface ShareByteMessageOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+
+    // required bytes value = 1;
+    /**
+     * <code>required bytes value = 1;</code>
+     */
+    boolean hasValue();
+    /**
+     * <code>required bytes value = 1;</code>
+     */
+    com.google.protobuf.ByteString getValue();
+  }
+  /**
+   * Protobuf type {@code protocommunication.ShareByteMessage}
+   */
+  public static final class ShareByteMessage extends
+      com.google.protobuf.GeneratedMessage
+      implements ShareByteMessageOrBuilder {
+    // Use ShareByteMessage.newBuilder() to construct.
+    private ShareByteMessage(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private ShareByteMessage(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final ShareByteMessage defaultInstance;
+    public static ShareByteMessage getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public ShareByteMessage getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ShareByteMessage(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              bitField0_ |= 0x00000001;
+              value_ = input.readBytes();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return pt.uminho.haslab.protocommunication.Search.internal_static_protocommunication_ShareByteMessage_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return pt.uminho.haslab.protocommunication.Search.internal_static_protocommunication_ShareByteMessage_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              pt.uminho.haslab.protocommunication.Search.ShareByteMessage.class, pt.uminho.haslab.protocommunication.Search.ShareByteMessage.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<ShareByteMessage> PARSER =
+        new com.google.protobuf.AbstractParser<ShareByteMessage>() {
+      public ShareByteMessage parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ShareByteMessage(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ShareByteMessage> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    // required bytes value = 1;
+    public static final int VALUE_FIELD_NUMBER = 1;
+    private com.google.protobuf.ByteString value_;
+    /**
+     * <code>required bytes value = 1;</code>
+     */
+    public boolean hasValue() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required bytes value = 1;</code>
+     */
+    public com.google.protobuf.ByteString getValue() {
+      return value_;
+    }
+
+    private void initFields() {
+      value_ = com.google.protobuf.ByteString.EMPTY;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      if (!hasValue()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, value_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, value_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static pt.uminho.haslab.protocommunication.Search.ShareByteMessage parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static pt.uminho.haslab.protocommunication.Search.ShareByteMessage parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static pt.uminho.haslab.protocommunication.Search.ShareByteMessage parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static pt.uminho.haslab.protocommunication.Search.ShareByteMessage parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static pt.uminho.haslab.protocommunication.Search.ShareByteMessage parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static pt.uminho.haslab.protocommunication.Search.ShareByteMessage parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static pt.uminho.haslab.protocommunication.Search.ShareByteMessage parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static pt.uminho.haslab.protocommunication.Search.ShareByteMessage parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static pt.uminho.haslab.protocommunication.Search.ShareByteMessage parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static pt.uminho.haslab.protocommunication.Search.ShareByteMessage parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(pt.uminho.haslab.protocommunication.Search.ShareByteMessage prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code protocommunication.ShareByteMessage}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements pt.uminho.haslab.protocommunication.Search.ShareByteMessageOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return pt.uminho.haslab.protocommunication.Search.internal_static_protocommunication_ShareByteMessage_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return pt.uminho.haslab.protocommunication.Search.internal_static_protocommunication_ShareByteMessage_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                pt.uminho.haslab.protocommunication.Search.ShareByteMessage.class, pt.uminho.haslab.protocommunication.Search.ShareByteMessage.Builder.class);
+      }
+
+      // Construct using pt.uminho.haslab.protocommunication.Search.ShareByteMessage.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        value_ = com.google.protobuf.ByteString.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return pt.uminho.haslab.protocommunication.Search.internal_static_protocommunication_ShareByteMessage_descriptor;
+      }
+
+      public pt.uminho.haslab.protocommunication.Search.ShareByteMessage getDefaultInstanceForType() {
+        return pt.uminho.haslab.protocommunication.Search.ShareByteMessage.getDefaultInstance();
+      }
+
+      public pt.uminho.haslab.protocommunication.Search.ShareByteMessage build() {
+        pt.uminho.haslab.protocommunication.Search.ShareByteMessage result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public pt.uminho.haslab.protocommunication.Search.ShareByteMessage buildPartial() {
+        pt.uminho.haslab.protocommunication.Search.ShareByteMessage result = new pt.uminho.haslab.protocommunication.Search.ShareByteMessage(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.value_ = value_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof pt.uminho.haslab.protocommunication.Search.ShareByteMessage) {
+          return mergeFrom((pt.uminho.haslab.protocommunication.Search.ShareByteMessage)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(pt.uminho.haslab.protocommunication.Search.ShareByteMessage other) {
+        if (other == pt.uminho.haslab.protocommunication.Search.ShareByteMessage.getDefaultInstance()) return this;
+        if (other.hasValue()) {
+          setValue(other.getValue());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasValue()) {
+          
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        pt.uminho.haslab.protocommunication.Search.ShareByteMessage parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (pt.uminho.haslab.protocommunication.Search.ShareByteMessage) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      // required bytes value = 1;
+      private com.google.protobuf.ByteString value_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>required bytes value = 1;</code>
+       */
+      public boolean hasValue() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required bytes value = 1;</code>
+       */
+      public com.google.protobuf.ByteString getValue() {
+        return value_;
+      }
+      /**
+       * <code>required bytes value = 1;</code>
+       */
+      public Builder setValue(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        value_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required bytes value = 1;</code>
+       */
+      public Builder clearValue() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        value_ = getDefaultInstance().getValue();
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:protocommunication.ShareByteMessage)
+    }
+
+    static {
+      defaultInstance = new ShareByteMessage(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:protocommunication.ShareByteMessage)
+  }
+
   public interface ShareMessageOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
 
@@ -833,6 +1240,833 @@ public final class Search {
     }
 
     // @@protoc_insertion_point(class_scope:protocommunication.ShareMessage)
+  }
+
+  public interface BatchShareMessageOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+
+    // required bytes requestID = 1;
+    /**
+     * <code>required bytes requestID = 1;</code>
+     */
+    boolean hasRequestID();
+    /**
+     * <code>required bytes requestID = 1;</code>
+     */
+    com.google.protobuf.ByteString getRequestID();
+
+    // required bytes regionID = 2;
+    /**
+     * <code>required bytes regionID = 2;</code>
+     */
+    boolean hasRegionID();
+    /**
+     * <code>required bytes regionID = 2;</code>
+     */
+    com.google.protobuf.ByteString getRegionID();
+
+    // required sfixed32 playerSource = 3;
+    /**
+     * <code>required sfixed32 playerSource = 3;</code>
+     */
+    boolean hasPlayerSource();
+    /**
+     * <code>required sfixed32 playerSource = 3;</code>
+     */
+    int getPlayerSource();
+
+    // required sfixed32 playerDest = 4;
+    /**
+     * <code>required sfixed32 playerDest = 4;</code>
+     */
+    boolean hasPlayerDest();
+    /**
+     * <code>required sfixed32 playerDest = 4;</code>
+     */
+    int getPlayerDest();
+
+    // repeated bytes values = 5;
+    /**
+     * <code>repeated bytes values = 5;</code>
+     */
+    java.util.List<com.google.protobuf.ByteString> getValuesList();
+    /**
+     * <code>repeated bytes values = 5;</code>
+     */
+    int getValuesCount();
+    /**
+     * <code>repeated bytes values = 5;</code>
+     */
+    com.google.protobuf.ByteString getValues(int index);
+  }
+  /**
+   * Protobuf type {@code protocommunication.BatchShareMessage}
+   */
+  public static final class BatchShareMessage extends
+      com.google.protobuf.GeneratedMessage
+      implements BatchShareMessageOrBuilder {
+    // Use BatchShareMessage.newBuilder() to construct.
+    private BatchShareMessage(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private BatchShareMessage(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final BatchShareMessage defaultInstance;
+    public static BatchShareMessage getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public BatchShareMessage getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private BatchShareMessage(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              bitField0_ |= 0x00000001;
+              requestID_ = input.readBytes();
+              break;
+            }
+            case 18: {
+              bitField0_ |= 0x00000002;
+              regionID_ = input.readBytes();
+              break;
+            }
+            case 29: {
+              bitField0_ |= 0x00000004;
+              playerSource_ = input.readSFixed32();
+              break;
+            }
+            case 37: {
+              bitField0_ |= 0x00000008;
+              playerDest_ = input.readSFixed32();
+              break;
+            }
+            case 42: {
+              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+                values_ = new java.util.ArrayList<com.google.protobuf.ByteString>();
+                mutable_bitField0_ |= 0x00000010;
+              }
+              values_.add(input.readBytes());
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+          values_ = java.util.Collections.unmodifiableList(values_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return pt.uminho.haslab.protocommunication.Search.internal_static_protocommunication_BatchShareMessage_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return pt.uminho.haslab.protocommunication.Search.internal_static_protocommunication_BatchShareMessage_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              pt.uminho.haslab.protocommunication.Search.BatchShareMessage.class, pt.uminho.haslab.protocommunication.Search.BatchShareMessage.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<BatchShareMessage> PARSER =
+        new com.google.protobuf.AbstractParser<BatchShareMessage>() {
+      public BatchShareMessage parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new BatchShareMessage(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<BatchShareMessage> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    // required bytes requestID = 1;
+    public static final int REQUESTID_FIELD_NUMBER = 1;
+    private com.google.protobuf.ByteString requestID_;
+    /**
+     * <code>required bytes requestID = 1;</code>
+     */
+    public boolean hasRequestID() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required bytes requestID = 1;</code>
+     */
+    public com.google.protobuf.ByteString getRequestID() {
+      return requestID_;
+    }
+
+    // required bytes regionID = 2;
+    public static final int REGIONID_FIELD_NUMBER = 2;
+    private com.google.protobuf.ByteString regionID_;
+    /**
+     * <code>required bytes regionID = 2;</code>
+     */
+    public boolean hasRegionID() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required bytes regionID = 2;</code>
+     */
+    public com.google.protobuf.ByteString getRegionID() {
+      return regionID_;
+    }
+
+    // required sfixed32 playerSource = 3;
+    public static final int PLAYERSOURCE_FIELD_NUMBER = 3;
+    private int playerSource_;
+    /**
+     * <code>required sfixed32 playerSource = 3;</code>
+     */
+    public boolean hasPlayerSource() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>required sfixed32 playerSource = 3;</code>
+     */
+    public int getPlayerSource() {
+      return playerSource_;
+    }
+
+    // required sfixed32 playerDest = 4;
+    public static final int PLAYERDEST_FIELD_NUMBER = 4;
+    private int playerDest_;
+    /**
+     * <code>required sfixed32 playerDest = 4;</code>
+     */
+    public boolean hasPlayerDest() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>required sfixed32 playerDest = 4;</code>
+     */
+    public int getPlayerDest() {
+      return playerDest_;
+    }
+
+    // repeated bytes values = 5;
+    public static final int VALUES_FIELD_NUMBER = 5;
+    private java.util.List<com.google.protobuf.ByteString> values_;
+    /**
+     * <code>repeated bytes values = 5;</code>
+     */
+    public java.util.List<com.google.protobuf.ByteString>
+        getValuesList() {
+      return values_;
+    }
+    /**
+     * <code>repeated bytes values = 5;</code>
+     */
+    public int getValuesCount() {
+      return values_.size();
+    }
+    /**
+     * <code>repeated bytes values = 5;</code>
+     */
+    public com.google.protobuf.ByteString getValues(int index) {
+      return values_.get(index);
+    }
+
+    private void initFields() {
+      requestID_ = com.google.protobuf.ByteString.EMPTY;
+      regionID_ = com.google.protobuf.ByteString.EMPTY;
+      playerSource_ = 0;
+      playerDest_ = 0;
+      values_ = java.util.Collections.emptyList();
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      if (!hasRequestID()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasRegionID()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasPlayerSource()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasPlayerDest()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, requestID_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, regionID_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeSFixed32(3, playerSource_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeSFixed32(4, playerDest_);
+      }
+      for (int i = 0; i < values_.size(); i++) {
+        output.writeBytes(5, values_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, requestID_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, regionID_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeSFixed32Size(3, playerSource_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeSFixed32Size(4, playerDest_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < values_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeBytesSizeNoTag(values_.get(i));
+        }
+        size += dataSize;
+        size += 1 * getValuesList().size();
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static pt.uminho.haslab.protocommunication.Search.BatchShareMessage parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static pt.uminho.haslab.protocommunication.Search.BatchShareMessage parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static pt.uminho.haslab.protocommunication.Search.BatchShareMessage parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static pt.uminho.haslab.protocommunication.Search.BatchShareMessage parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static pt.uminho.haslab.protocommunication.Search.BatchShareMessage parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static pt.uminho.haslab.protocommunication.Search.BatchShareMessage parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static pt.uminho.haslab.protocommunication.Search.BatchShareMessage parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static pt.uminho.haslab.protocommunication.Search.BatchShareMessage parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static pt.uminho.haslab.protocommunication.Search.BatchShareMessage parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static pt.uminho.haslab.protocommunication.Search.BatchShareMessage parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(pt.uminho.haslab.protocommunication.Search.BatchShareMessage prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code protocommunication.BatchShareMessage}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements pt.uminho.haslab.protocommunication.Search.BatchShareMessageOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return pt.uminho.haslab.protocommunication.Search.internal_static_protocommunication_BatchShareMessage_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return pt.uminho.haslab.protocommunication.Search.internal_static_protocommunication_BatchShareMessage_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                pt.uminho.haslab.protocommunication.Search.BatchShareMessage.class, pt.uminho.haslab.protocommunication.Search.BatchShareMessage.Builder.class);
+      }
+
+      // Construct using pt.uminho.haslab.protocommunication.Search.BatchShareMessage.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        requestID_ = com.google.protobuf.ByteString.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        regionID_ = com.google.protobuf.ByteString.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        playerSource_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        playerDest_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        values_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return pt.uminho.haslab.protocommunication.Search.internal_static_protocommunication_BatchShareMessage_descriptor;
+      }
+
+      public pt.uminho.haslab.protocommunication.Search.BatchShareMessage getDefaultInstanceForType() {
+        return pt.uminho.haslab.protocommunication.Search.BatchShareMessage.getDefaultInstance();
+      }
+
+      public pt.uminho.haslab.protocommunication.Search.BatchShareMessage build() {
+        pt.uminho.haslab.protocommunication.Search.BatchShareMessage result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public pt.uminho.haslab.protocommunication.Search.BatchShareMessage buildPartial() {
+        pt.uminho.haslab.protocommunication.Search.BatchShareMessage result = new pt.uminho.haslab.protocommunication.Search.BatchShareMessage(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.requestID_ = requestID_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.regionID_ = regionID_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.playerSource_ = playerSource_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.playerDest_ = playerDest_;
+        if (((bitField0_ & 0x00000010) == 0x00000010)) {
+          values_ = java.util.Collections.unmodifiableList(values_);
+          bitField0_ = (bitField0_ & ~0x00000010);
+        }
+        result.values_ = values_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof pt.uminho.haslab.protocommunication.Search.BatchShareMessage) {
+          return mergeFrom((pt.uminho.haslab.protocommunication.Search.BatchShareMessage)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(pt.uminho.haslab.protocommunication.Search.BatchShareMessage other) {
+        if (other == pt.uminho.haslab.protocommunication.Search.BatchShareMessage.getDefaultInstance()) return this;
+        if (other.hasRequestID()) {
+          setRequestID(other.getRequestID());
+        }
+        if (other.hasRegionID()) {
+          setRegionID(other.getRegionID());
+        }
+        if (other.hasPlayerSource()) {
+          setPlayerSource(other.getPlayerSource());
+        }
+        if (other.hasPlayerDest()) {
+          setPlayerDest(other.getPlayerDest());
+        }
+        if (!other.values_.isEmpty()) {
+          if (values_.isEmpty()) {
+            values_ = other.values_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+          } else {
+            ensureValuesIsMutable();
+            values_.addAll(other.values_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasRequestID()) {
+          
+          return false;
+        }
+        if (!hasRegionID()) {
+          
+          return false;
+        }
+        if (!hasPlayerSource()) {
+          
+          return false;
+        }
+        if (!hasPlayerDest()) {
+          
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        pt.uminho.haslab.protocommunication.Search.BatchShareMessage parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (pt.uminho.haslab.protocommunication.Search.BatchShareMessage) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      // required bytes requestID = 1;
+      private com.google.protobuf.ByteString requestID_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>required bytes requestID = 1;</code>
+       */
+      public boolean hasRequestID() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required bytes requestID = 1;</code>
+       */
+      public com.google.protobuf.ByteString getRequestID() {
+        return requestID_;
+      }
+      /**
+       * <code>required bytes requestID = 1;</code>
+       */
+      public Builder setRequestID(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        requestID_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required bytes requestID = 1;</code>
+       */
+      public Builder clearRequestID() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        requestID_ = getDefaultInstance().getRequestID();
+        onChanged();
+        return this;
+      }
+
+      // required bytes regionID = 2;
+      private com.google.protobuf.ByteString regionID_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>required bytes regionID = 2;</code>
+       */
+      public boolean hasRegionID() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required bytes regionID = 2;</code>
+       */
+      public com.google.protobuf.ByteString getRegionID() {
+        return regionID_;
+      }
+      /**
+       * <code>required bytes regionID = 2;</code>
+       */
+      public Builder setRegionID(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        regionID_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required bytes regionID = 2;</code>
+       */
+      public Builder clearRegionID() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        regionID_ = getDefaultInstance().getRegionID();
+        onChanged();
+        return this;
+      }
+
+      // required sfixed32 playerSource = 3;
+      private int playerSource_ ;
+      /**
+       * <code>required sfixed32 playerSource = 3;</code>
+       */
+      public boolean hasPlayerSource() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>required sfixed32 playerSource = 3;</code>
+       */
+      public int getPlayerSource() {
+        return playerSource_;
+      }
+      /**
+       * <code>required sfixed32 playerSource = 3;</code>
+       */
+      public Builder setPlayerSource(int value) {
+        bitField0_ |= 0x00000004;
+        playerSource_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required sfixed32 playerSource = 3;</code>
+       */
+      public Builder clearPlayerSource() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        playerSource_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // required sfixed32 playerDest = 4;
+      private int playerDest_ ;
+      /**
+       * <code>required sfixed32 playerDest = 4;</code>
+       */
+      public boolean hasPlayerDest() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>required sfixed32 playerDest = 4;</code>
+       */
+      public int getPlayerDest() {
+        return playerDest_;
+      }
+      /**
+       * <code>required sfixed32 playerDest = 4;</code>
+       */
+      public Builder setPlayerDest(int value) {
+        bitField0_ |= 0x00000008;
+        playerDest_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required sfixed32 playerDest = 4;</code>
+       */
+      public Builder clearPlayerDest() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        playerDest_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // repeated bytes values = 5;
+      private java.util.List<com.google.protobuf.ByteString> values_ = java.util.Collections.emptyList();
+      private void ensureValuesIsMutable() {
+        if (!((bitField0_ & 0x00000010) == 0x00000010)) {
+          values_ = new java.util.ArrayList<com.google.protobuf.ByteString>(values_);
+          bitField0_ |= 0x00000010;
+         }
+      }
+      /**
+       * <code>repeated bytes values = 5;</code>
+       */
+      public java.util.List<com.google.protobuf.ByteString>
+          getValuesList() {
+        return java.util.Collections.unmodifiableList(values_);
+      }
+      /**
+       * <code>repeated bytes values = 5;</code>
+       */
+      public int getValuesCount() {
+        return values_.size();
+      }
+      /**
+       * <code>repeated bytes values = 5;</code>
+       */
+      public com.google.protobuf.ByteString getValues(int index) {
+        return values_.get(index);
+      }
+      /**
+       * <code>repeated bytes values = 5;</code>
+       */
+      public Builder setValues(
+          int index, com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureValuesIsMutable();
+        values_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated bytes values = 5;</code>
+       */
+      public Builder addValues(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureValuesIsMutable();
+        values_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated bytes values = 5;</code>
+       */
+      public Builder addAllValues(
+          java.lang.Iterable<? extends com.google.protobuf.ByteString> values) {
+        ensureValuesIsMutable();
+        super.addAll(values, values_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated bytes values = 5;</code>
+       */
+      public Builder clearValues() {
+        values_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:protocommunication.BatchShareMessage)
+    }
+
+    static {
+      defaultInstance = new BatchShareMessage(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:protocommunication.BatchShareMessage)
   }
 
   public interface ResultsMessageOrBuilder
@@ -2949,10 +4183,20 @@ public final class Search {
   }
 
   private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_protocommunication_ShareByteMessage_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_protocommunication_ShareByteMessage_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
     internal_static_protocommunication_ShareMessage_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_protocommunication_ShareMessage_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_protocommunication_BatchShareMessage_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_protocommunication_BatchShareMessage_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
     internal_static_protocommunication_ResultsMessage_descriptor;
   private static
@@ -2978,43 +4222,59 @@ public final class Search {
   static {
     java.lang.String[] descriptorData = {
       "\n\027main/proto/Search.proto\022\022protocommunic" +
-      "ation\"m\n\014ShareMessage\022\021\n\trequestID\030\001 \002(\014" +
+      "ation\"!\n\020ShareByteMessage\022\r\n\005value\030\001 \002(\014" +
+      "\"m\n\014ShareMessage\022\021\n\trequestID\030\001 \002(\014\022\020\n\010r" +
+      "egionID\030\002 \002(\014\022\024\n\014playerSource\030\003 \002(\017\022\022\n\np" +
+      "layerDest\030\004 \002(\017\022\016\n\006values\030\005 \003(\014\"r\n\021Batch" +
+      "ShareMessage\022\021\n\trequestID\030\001 \002(\014\022\020\n\010regio" +
+      "nID\030\002 \002(\014\022\024\n\014playerSource\030\003 \002(\017\022\022\n\nplaye" +
+      "rDest\030\004 \002(\017\022\016\n\006values\030\005 \003(\014\"\201\001\n\016ResultsM" +
+      "essage\022\021\n\trequestID\030\001 \002(\014\022\020\n\010regionID\030\002 " +
+      "\002(\014\022\024\n\014playerSource\030\003 \002(\017\022\022\n\nplayerDest\030",
+      "\004 \002(\017\022\016\n\006values\030\005 \003(\014\022\020\n\010secretID\030\006 \003(\014\"" +
+      "t\n\022FilterIndexMessage\022\021\n\trequestID\030\001 \002(\014" +
       "\022\020\n\010regionID\030\002 \002(\014\022\024\n\014playerSource\030\003 \002(\017" +
-      "\022\022\n\nplayerDest\030\004 \002(\017\022\016\n\006values\030\005 \003(\014\"\201\001\n" +
-      "\016ResultsMessage\022\021\n\trequestID\030\001 \002(\014\022\020\n\010re" +
-      "gionID\030\002 \002(\014\022\024\n\014playerSource\030\003 \002(\017\022\022\n\npl" +
-      "ayerDest\030\004 \002(\017\022\016\n\006values\030\005 \003(\014\022\020\n\010secret" +
-      "ID\030\006 \003(\014\"t\n\022FilterIndexMessage\022\021\n\treques" +
-      "tID\030\001 \002(\014\022\020\n\010regionID\030\002 \002(\014\022\024\n\014playerSou" +
-      "rce\030\003 \002(\017\022\022\n\nplayerDest\030\004 \002(\017\022\017\n\007indexes",
-      "\030\005 \003(\014\"\n\n\010ShutdownB\'\n#pt.uminho.haslab.p" +
-      "rotocommunicationH\001"
+      "\022\022\n\nplayerDest\030\004 \002(\017\022\017\n\007indexes\030\005 \003(\014\"\n\n" +
+      "\010ShutdownB\'\n#pt.uminho.haslab.protocommu" +
+      "nicationH\001"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
         public com.google.protobuf.ExtensionRegistry assignDescriptors(
             com.google.protobuf.Descriptors.FileDescriptor root) {
           descriptor = root;
-          internal_static_protocommunication_ShareMessage_descriptor =
+          internal_static_protocommunication_ShareByteMessage_descriptor =
             getDescriptor().getMessageTypes().get(0);
+          internal_static_protocommunication_ShareByteMessage_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_protocommunication_ShareByteMessage_descriptor,
+              new java.lang.String[] { "Value", });
+          internal_static_protocommunication_ShareMessage_descriptor =
+            getDescriptor().getMessageTypes().get(1);
           internal_static_protocommunication_ShareMessage_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_protocommunication_ShareMessage_descriptor,
               new java.lang.String[] { "RequestID", "RegionID", "PlayerSource", "PlayerDest", "Values", });
+          internal_static_protocommunication_BatchShareMessage_descriptor =
+            getDescriptor().getMessageTypes().get(2);
+          internal_static_protocommunication_BatchShareMessage_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_protocommunication_BatchShareMessage_descriptor,
+              new java.lang.String[] { "RequestID", "RegionID", "PlayerSource", "PlayerDest", "Values", });
           internal_static_protocommunication_ResultsMessage_descriptor =
-            getDescriptor().getMessageTypes().get(1);
+            getDescriptor().getMessageTypes().get(3);
           internal_static_protocommunication_ResultsMessage_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_protocommunication_ResultsMessage_descriptor,
               new java.lang.String[] { "RequestID", "RegionID", "PlayerSource", "PlayerDest", "Values", "SecretID", });
           internal_static_protocommunication_FilterIndexMessage_descriptor =
-            getDescriptor().getMessageTypes().get(2);
+            getDescriptor().getMessageTypes().get(4);
           internal_static_protocommunication_FilterIndexMessage_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_protocommunication_FilterIndexMessage_descriptor,
               new java.lang.String[] { "RequestID", "RegionID", "PlayerSource", "PlayerDest", "Indexes", });
           internal_static_protocommunication_Shutdown_descriptor =
-            getDescriptor().getMessageTypes().get(3);
+            getDescriptor().getMessageTypes().get(5);
           internal_static_protocommunication_Shutdown_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_protocommunication_Shutdown_descriptor,
