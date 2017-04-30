@@ -9,13 +9,6 @@ option optimize_for = SPEED;
  * running protocols.
 */
 
-
-
-message ShareByteMessage{
-
-   required bytes value = 1;
-}
-
 message ShareMessage{
     required bytes requestID = 1;
     required bytes regionID = 2;
@@ -48,8 +41,6 @@ message FilterIndexMessage{
     required sfixed32 playerSource = 3;
     required sfixed32 playerDest = 4;
     repeated bytes indexes = 5;
-
-    
 }
 
 
