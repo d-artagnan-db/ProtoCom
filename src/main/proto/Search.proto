@@ -17,6 +17,10 @@ message ShareMessage{
     repeated bytes values = 5;
 }
 
+
+message ListShareMessage{
+    repeated BatchShareMessage values = 1;
+}
 message BatchShareMessage{
     required bytes requestID = 1;
     required bytes regionID = 2;
