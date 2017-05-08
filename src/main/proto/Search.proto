@@ -47,6 +47,16 @@ message FilterIndexMessage{
     repeated bytes indexes = 5;
 }
 
+message RequestRegionIdentifierLocation{
+    required bytes startKey = 1;
+    required bytes endKey = 2;
+    repeated bytes tableName = 3;
+}
+
+message RegionIdentifierLocationResponse{
+    required bytes regionAddress = 1;
+    required sfixed32 regionPort = 2;
+}
 
 message Shutdown{
 	
