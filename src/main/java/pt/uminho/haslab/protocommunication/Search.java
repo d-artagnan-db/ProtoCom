@@ -4152,7 +4152,7 @@ public final class Search {
     // @@protoc_insertion_point(class_scope:protocommunication.FilterIndexMessage)
   }
 
-  public interface RequestRegionIdentifierLocationOrBuilder
+  public interface RequestRegionLocationOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
 
     // required bytes startKey = 1;
@@ -4175,39 +4175,35 @@ public final class Search {
      */
     com.google.protobuf.ByteString getEndKey();
 
-    // repeated bytes tableName = 3;
+    // required bytes tableName = 3;
     /**
-     * <code>repeated bytes tableName = 3;</code>
+     * <code>required bytes tableName = 3;</code>
      */
-    java.util.List<com.google.protobuf.ByteString> getTableNameList();
+    boolean hasTableName();
     /**
-     * <code>repeated bytes tableName = 3;</code>
+     * <code>required bytes tableName = 3;</code>
      */
-    int getTableNameCount();
-    /**
-     * <code>repeated bytes tableName = 3;</code>
-     */
-    com.google.protobuf.ByteString getTableName(int index);
+    com.google.protobuf.ByteString getTableName();
   }
   /**
-   * Protobuf type {@code protocommunication.RequestRegionIdentifierLocation}
+   * Protobuf type {@code protocommunication.RequestRegionLocation}
    */
-  public static final class RequestRegionIdentifierLocation extends
+  public static final class RequestRegionLocation extends
       com.google.protobuf.GeneratedMessage
-      implements RequestRegionIdentifierLocationOrBuilder {
-    // Use RequestRegionIdentifierLocation.newBuilder() to construct.
-    private RequestRegionIdentifierLocation(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      implements RequestRegionLocationOrBuilder {
+    // Use RequestRegionLocation.newBuilder() to construct.
+    private RequestRegionLocation(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
       this.unknownFields = builder.getUnknownFields();
     }
-    private RequestRegionIdentifierLocation(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+    private RequestRegionLocation(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
 
-    private static final RequestRegionIdentifierLocation defaultInstance;
-    public static RequestRegionIdentifierLocation getDefaultInstance() {
+    private static final RequestRegionLocation defaultInstance;
+    public static RequestRegionLocation getDefaultInstance() {
       return defaultInstance;
     }
 
-    public RequestRegionIdentifierLocation getDefaultInstanceForType() {
+    public RequestRegionLocation getDefaultInstanceForType() {
       return defaultInstance;
     }
 
@@ -4217,7 +4213,7 @@ public final class Search {
         getUnknownFields() {
       return this.unknownFields;
     }
-    private RequestRegionIdentifierLocation(
+    private RequestRegionLocation(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -4251,11 +4247,8 @@ public final class Search {
               break;
             }
             case 26: {
-              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-                tableName_ = new java.util.ArrayList<com.google.protobuf.ByteString>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              tableName_.add(input.readBytes());
+              bitField0_ |= 0x00000004;
+              tableName_ = input.readBytes();
               break;
             }
           }
@@ -4266,37 +4259,34 @@ public final class Search {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e.getMessage()).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-          tableName_ = java.util.Collections.unmodifiableList(tableName_);
-        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return pt.uminho.haslab.protocommunication.Search.internal_static_protocommunication_RequestRegionIdentifierLocation_descriptor;
+      return pt.uminho.haslab.protocommunication.Search.internal_static_protocommunication_RequestRegionLocation_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return pt.uminho.haslab.protocommunication.Search.internal_static_protocommunication_RequestRegionIdentifierLocation_fieldAccessorTable
+      return pt.uminho.haslab.protocommunication.Search.internal_static_protocommunication_RequestRegionLocation_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              pt.uminho.haslab.protocommunication.Search.RequestRegionIdentifierLocation.class, pt.uminho.haslab.protocommunication.Search.RequestRegionIdentifierLocation.Builder.class);
+              pt.uminho.haslab.protocommunication.Search.RequestRegionLocation.class, pt.uminho.haslab.protocommunication.Search.RequestRegionLocation.Builder.class);
     }
 
-    public static com.google.protobuf.Parser<RequestRegionIdentifierLocation> PARSER =
-        new com.google.protobuf.AbstractParser<RequestRegionIdentifierLocation>() {
-      public RequestRegionIdentifierLocation parsePartialFrom(
+    public static com.google.protobuf.Parser<RequestRegionLocation> PARSER =
+        new com.google.protobuf.AbstractParser<RequestRegionLocation>() {
+      public RequestRegionLocation parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new RequestRegionIdentifierLocation(input, extensionRegistry);
+        return new RequestRegionLocation(input, extensionRegistry);
       }
     };
 
     @java.lang.Override
-    public com.google.protobuf.Parser<RequestRegionIdentifierLocation> getParserForType() {
+    public com.google.protobuf.Parser<RequestRegionLocation> getParserForType() {
       return PARSER;
     }
 
@@ -4333,33 +4323,26 @@ public final class Search {
       return endKey_;
     }
 
-    // repeated bytes tableName = 3;
+    // required bytes tableName = 3;
     public static final int TABLENAME_FIELD_NUMBER = 3;
-    private java.util.List<com.google.protobuf.ByteString> tableName_;
+    private com.google.protobuf.ByteString tableName_;
     /**
-     * <code>repeated bytes tableName = 3;</code>
+     * <code>required bytes tableName = 3;</code>
      */
-    public java.util.List<com.google.protobuf.ByteString>
-        getTableNameList() {
+    public boolean hasTableName() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>required bytes tableName = 3;</code>
+     */
+    public com.google.protobuf.ByteString getTableName() {
       return tableName_;
-    }
-    /**
-     * <code>repeated bytes tableName = 3;</code>
-     */
-    public int getTableNameCount() {
-      return tableName_.size();
-    }
-    /**
-     * <code>repeated bytes tableName = 3;</code>
-     */
-    public com.google.protobuf.ByteString getTableName(int index) {
-      return tableName_.get(index);
     }
 
     private void initFields() {
       startKey_ = com.google.protobuf.ByteString.EMPTY;
       endKey_ = com.google.protobuf.ByteString.EMPTY;
-      tableName_ = java.util.Collections.emptyList();
+      tableName_ = com.google.protobuf.ByteString.EMPTY;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -4371,6 +4354,10 @@ public final class Search {
         return false;
       }
       if (!hasEndKey()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasTableName()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -4387,8 +4374,8 @@ public final class Search {
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeBytes(2, endKey_);
       }
-      for (int i = 0; i < tableName_.size(); i++) {
-        output.writeBytes(3, tableName_.get(i));
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeBytes(3, tableName_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -4407,14 +4394,9 @@ public final class Search {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(2, endKey_);
       }
-      {
-        int dataSize = 0;
-        for (int i = 0; i < tableName_.size(); i++) {
-          dataSize += com.google.protobuf.CodedOutputStream
-            .computeBytesSizeNoTag(tableName_.get(i));
-        }
-        size += dataSize;
-        size += 1 * getTableNameList().size();
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(3, tableName_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -4428,53 +4410,53 @@ public final class Search {
       return super.writeReplace();
     }
 
-    public static pt.uminho.haslab.protocommunication.Search.RequestRegionIdentifierLocation parseFrom(
+    public static pt.uminho.haslab.protocommunication.Search.RequestRegionLocation parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static pt.uminho.haslab.protocommunication.Search.RequestRegionIdentifierLocation parseFrom(
+    public static pt.uminho.haslab.protocommunication.Search.RequestRegionLocation parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static pt.uminho.haslab.protocommunication.Search.RequestRegionIdentifierLocation parseFrom(byte[] data)
+    public static pt.uminho.haslab.protocommunication.Search.RequestRegionLocation parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static pt.uminho.haslab.protocommunication.Search.RequestRegionIdentifierLocation parseFrom(
+    public static pt.uminho.haslab.protocommunication.Search.RequestRegionLocation parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static pt.uminho.haslab.protocommunication.Search.RequestRegionIdentifierLocation parseFrom(java.io.InputStream input)
+    public static pt.uminho.haslab.protocommunication.Search.RequestRegionLocation parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static pt.uminho.haslab.protocommunication.Search.RequestRegionIdentifierLocation parseFrom(
+    public static pt.uminho.haslab.protocommunication.Search.RequestRegionLocation parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static pt.uminho.haslab.protocommunication.Search.RequestRegionIdentifierLocation parseDelimitedFrom(java.io.InputStream input)
+    public static pt.uminho.haslab.protocommunication.Search.RequestRegionLocation parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static pt.uminho.haslab.protocommunication.Search.RequestRegionIdentifierLocation parseDelimitedFrom(
+    public static pt.uminho.haslab.protocommunication.Search.RequestRegionLocation parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static pt.uminho.haslab.protocommunication.Search.RequestRegionIdentifierLocation parseFrom(
+    public static pt.uminho.haslab.protocommunication.Search.RequestRegionLocation parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static pt.uminho.haslab.protocommunication.Search.RequestRegionIdentifierLocation parseFrom(
+    public static pt.uminho.haslab.protocommunication.Search.RequestRegionLocation parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -4483,7 +4465,7 @@ public final class Search {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(pt.uminho.haslab.protocommunication.Search.RequestRegionIdentifierLocation prototype) {
+    public static Builder newBuilder(pt.uminho.haslab.protocommunication.Search.RequestRegionLocation prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -4495,24 +4477,24 @@ public final class Search {
       return builder;
     }
     /**
-     * Protobuf type {@code protocommunication.RequestRegionIdentifierLocation}
+     * Protobuf type {@code protocommunication.RequestRegionLocation}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements pt.uminho.haslab.protocommunication.Search.RequestRegionIdentifierLocationOrBuilder {
+       implements pt.uminho.haslab.protocommunication.Search.RequestRegionLocationOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return pt.uminho.haslab.protocommunication.Search.internal_static_protocommunication_RequestRegionIdentifierLocation_descriptor;
+        return pt.uminho.haslab.protocommunication.Search.internal_static_protocommunication_RequestRegionLocation_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return pt.uminho.haslab.protocommunication.Search.internal_static_protocommunication_RequestRegionIdentifierLocation_fieldAccessorTable
+        return pt.uminho.haslab.protocommunication.Search.internal_static_protocommunication_RequestRegionLocation_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                pt.uminho.haslab.protocommunication.Search.RequestRegionIdentifierLocation.class, pt.uminho.haslab.protocommunication.Search.RequestRegionIdentifierLocation.Builder.class);
+                pt.uminho.haslab.protocommunication.Search.RequestRegionLocation.class, pt.uminho.haslab.protocommunication.Search.RequestRegionLocation.Builder.class);
       }
 
-      // Construct using pt.uminho.haslab.protocommunication.Search.RequestRegionIdentifierLocation.newBuilder()
+      // Construct using pt.uminho.haslab.protocommunication.Search.RequestRegionLocation.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -4536,7 +4518,7 @@ public final class Search {
         bitField0_ = (bitField0_ & ~0x00000001);
         endKey_ = com.google.protobuf.ByteString.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000002);
-        tableName_ = java.util.Collections.emptyList();
+        tableName_ = com.google.protobuf.ByteString.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
@@ -4547,23 +4529,23 @@ public final class Search {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return pt.uminho.haslab.protocommunication.Search.internal_static_protocommunication_RequestRegionIdentifierLocation_descriptor;
+        return pt.uminho.haslab.protocommunication.Search.internal_static_protocommunication_RequestRegionLocation_descriptor;
       }
 
-      public pt.uminho.haslab.protocommunication.Search.RequestRegionIdentifierLocation getDefaultInstanceForType() {
-        return pt.uminho.haslab.protocommunication.Search.RequestRegionIdentifierLocation.getDefaultInstance();
+      public pt.uminho.haslab.protocommunication.Search.RequestRegionLocation getDefaultInstanceForType() {
+        return pt.uminho.haslab.protocommunication.Search.RequestRegionLocation.getDefaultInstance();
       }
 
-      public pt.uminho.haslab.protocommunication.Search.RequestRegionIdentifierLocation build() {
-        pt.uminho.haslab.protocommunication.Search.RequestRegionIdentifierLocation result = buildPartial();
+      public pt.uminho.haslab.protocommunication.Search.RequestRegionLocation build() {
+        pt.uminho.haslab.protocommunication.Search.RequestRegionLocation result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public pt.uminho.haslab.protocommunication.Search.RequestRegionIdentifierLocation buildPartial() {
-        pt.uminho.haslab.protocommunication.Search.RequestRegionIdentifierLocation result = new pt.uminho.haslab.protocommunication.Search.RequestRegionIdentifierLocation(this);
+      public pt.uminho.haslab.protocommunication.Search.RequestRegionLocation buildPartial() {
+        pt.uminho.haslab.protocommunication.Search.RequestRegionLocation result = new pt.uminho.haslab.protocommunication.Search.RequestRegionLocation(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -4574,9 +4556,8 @@ public final class Search {
           to_bitField0_ |= 0x00000002;
         }
         result.endKey_ = endKey_;
-        if (((bitField0_ & 0x00000004) == 0x00000004)) {
-          tableName_ = java.util.Collections.unmodifiableList(tableName_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
         }
         result.tableName_ = tableName_;
         result.bitField0_ = to_bitField0_;
@@ -4585,31 +4566,24 @@ public final class Search {
       }
 
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof pt.uminho.haslab.protocommunication.Search.RequestRegionIdentifierLocation) {
-          return mergeFrom((pt.uminho.haslab.protocommunication.Search.RequestRegionIdentifierLocation)other);
+        if (other instanceof pt.uminho.haslab.protocommunication.Search.RequestRegionLocation) {
+          return mergeFrom((pt.uminho.haslab.protocommunication.Search.RequestRegionLocation)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(pt.uminho.haslab.protocommunication.Search.RequestRegionIdentifierLocation other) {
-        if (other == pt.uminho.haslab.protocommunication.Search.RequestRegionIdentifierLocation.getDefaultInstance()) return this;
+      public Builder mergeFrom(pt.uminho.haslab.protocommunication.Search.RequestRegionLocation other) {
+        if (other == pt.uminho.haslab.protocommunication.Search.RequestRegionLocation.getDefaultInstance()) return this;
         if (other.hasStartKey()) {
           setStartKey(other.getStartKey());
         }
         if (other.hasEndKey()) {
           setEndKey(other.getEndKey());
         }
-        if (!other.tableName_.isEmpty()) {
-          if (tableName_.isEmpty()) {
-            tableName_ = other.tableName_;
-            bitField0_ = (bitField0_ & ~0x00000004);
-          } else {
-            ensureTableNameIsMutable();
-            tableName_.addAll(other.tableName_);
-          }
-          onChanged();
+        if (other.hasTableName()) {
+          setTableName(other.getTableName());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -4624,6 +4598,10 @@ public final class Search {
           
           return false;
         }
+        if (!hasTableName()) {
+          
+          return false;
+        }
         return true;
       }
 
@@ -4631,11 +4609,11 @@ public final class Search {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        pt.uminho.haslab.protocommunication.Search.RequestRegionIdentifierLocation parsedMessage = null;
+        pt.uminho.haslab.protocommunication.Search.RequestRegionLocation parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (pt.uminho.haslab.protocommunication.Search.RequestRegionIdentifierLocation) e.getUnfinishedMessage();
+          parsedMessage = (pt.uminho.haslab.protocommunication.Search.RequestRegionLocation) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -4718,90 +4696,54 @@ public final class Search {
         return this;
       }
 
-      // repeated bytes tableName = 3;
-      private java.util.List<com.google.protobuf.ByteString> tableName_ = java.util.Collections.emptyList();
-      private void ensureTableNameIsMutable() {
-        if (!((bitField0_ & 0x00000004) == 0x00000004)) {
-          tableName_ = new java.util.ArrayList<com.google.protobuf.ByteString>(tableName_);
-          bitField0_ |= 0x00000004;
-         }
+      // required bytes tableName = 3;
+      private com.google.protobuf.ByteString tableName_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>required bytes tableName = 3;</code>
+       */
+      public boolean hasTableName() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
-       * <code>repeated bytes tableName = 3;</code>
+       * <code>required bytes tableName = 3;</code>
        */
-      public java.util.List<com.google.protobuf.ByteString>
-          getTableNameList() {
-        return java.util.Collections.unmodifiableList(tableName_);
+      public com.google.protobuf.ByteString getTableName() {
+        return tableName_;
       }
       /**
-       * <code>repeated bytes tableName = 3;</code>
+       * <code>required bytes tableName = 3;</code>
        */
-      public int getTableNameCount() {
-        return tableName_.size();
-      }
-      /**
-       * <code>repeated bytes tableName = 3;</code>
-       */
-      public com.google.protobuf.ByteString getTableName(int index) {
-        return tableName_.get(index);
-      }
-      /**
-       * <code>repeated bytes tableName = 3;</code>
-       */
-      public Builder setTableName(
-          int index, com.google.protobuf.ByteString value) {
+      public Builder setTableName(com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  ensureTableNameIsMutable();
-        tableName_.set(index, value);
+  bitField0_ |= 0x00000004;
+        tableName_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>repeated bytes tableName = 3;</code>
-       */
-      public Builder addTableName(com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureTableNameIsMutable();
-        tableName_.add(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated bytes tableName = 3;</code>
-       */
-      public Builder addAllTableName(
-          java.lang.Iterable<? extends com.google.protobuf.ByteString> values) {
-        ensureTableNameIsMutable();
-        super.addAll(values, tableName_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated bytes tableName = 3;</code>
+       * <code>required bytes tableName = 3;</code>
        */
       public Builder clearTableName() {
-        tableName_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000004);
+        tableName_ = getDefaultInstance().getTableName();
         onChanged();
         return this;
       }
 
-      // @@protoc_insertion_point(builder_scope:protocommunication.RequestRegionIdentifierLocation)
+      // @@protoc_insertion_point(builder_scope:protocommunication.RequestRegionLocation)
     }
 
     static {
-      defaultInstance = new RequestRegionIdentifierLocation(true);
+      defaultInstance = new RequestRegionLocation(true);
       defaultInstance.initFields();
     }
 
-    // @@protoc_insertion_point(class_scope:protocommunication.RequestRegionIdentifierLocation)
+    // @@protoc_insertion_point(class_scope:protocommunication.RequestRegionLocation)
   }
 
-  public interface RegionIdentifierLocationResponseOrBuilder
+  public interface RegionLocationResponseOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
 
     // required bytes regionAddress = 1;
@@ -4825,24 +4767,24 @@ public final class Search {
     int getRegionPort();
   }
   /**
-   * Protobuf type {@code protocommunication.RegionIdentifierLocationResponse}
+   * Protobuf type {@code protocommunication.RegionLocationResponse}
    */
-  public static final class RegionIdentifierLocationResponse extends
+  public static final class RegionLocationResponse extends
       com.google.protobuf.GeneratedMessage
-      implements RegionIdentifierLocationResponseOrBuilder {
-    // Use RegionIdentifierLocationResponse.newBuilder() to construct.
-    private RegionIdentifierLocationResponse(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      implements RegionLocationResponseOrBuilder {
+    // Use RegionLocationResponse.newBuilder() to construct.
+    private RegionLocationResponse(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
       this.unknownFields = builder.getUnknownFields();
     }
-    private RegionIdentifierLocationResponse(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+    private RegionLocationResponse(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
 
-    private static final RegionIdentifierLocationResponse defaultInstance;
-    public static RegionIdentifierLocationResponse getDefaultInstance() {
+    private static final RegionLocationResponse defaultInstance;
+    public static RegionLocationResponse getDefaultInstance() {
       return defaultInstance;
     }
 
-    public RegionIdentifierLocationResponse getDefaultInstanceForType() {
+    public RegionLocationResponse getDefaultInstanceForType() {
       return defaultInstance;
     }
 
@@ -4852,7 +4794,7 @@ public final class Search {
         getUnknownFields() {
       return this.unknownFields;
     }
-    private RegionIdentifierLocationResponse(
+    private RegionLocationResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -4899,28 +4841,28 @@ public final class Search {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return pt.uminho.haslab.protocommunication.Search.internal_static_protocommunication_RegionIdentifierLocationResponse_descriptor;
+      return pt.uminho.haslab.protocommunication.Search.internal_static_protocommunication_RegionLocationResponse_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return pt.uminho.haslab.protocommunication.Search.internal_static_protocommunication_RegionIdentifierLocationResponse_fieldAccessorTable
+      return pt.uminho.haslab.protocommunication.Search.internal_static_protocommunication_RegionLocationResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              pt.uminho.haslab.protocommunication.Search.RegionIdentifierLocationResponse.class, pt.uminho.haslab.protocommunication.Search.RegionIdentifierLocationResponse.Builder.class);
+              pt.uminho.haslab.protocommunication.Search.RegionLocationResponse.class, pt.uminho.haslab.protocommunication.Search.RegionLocationResponse.Builder.class);
     }
 
-    public static com.google.protobuf.Parser<RegionIdentifierLocationResponse> PARSER =
-        new com.google.protobuf.AbstractParser<RegionIdentifierLocationResponse>() {
-      public RegionIdentifierLocationResponse parsePartialFrom(
+    public static com.google.protobuf.Parser<RegionLocationResponse> PARSER =
+        new com.google.protobuf.AbstractParser<RegionLocationResponse>() {
+      public RegionLocationResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new RegionIdentifierLocationResponse(input, extensionRegistry);
+        return new RegionLocationResponse(input, extensionRegistry);
       }
     };
 
     @java.lang.Override
-    public com.google.protobuf.Parser<RegionIdentifierLocationResponse> getParserForType() {
+    public com.google.protobuf.Parser<RegionLocationResponse> getParserForType() {
       return PARSER;
     }
 
@@ -5016,53 +4958,53 @@ public final class Search {
       return super.writeReplace();
     }
 
-    public static pt.uminho.haslab.protocommunication.Search.RegionIdentifierLocationResponse parseFrom(
+    public static pt.uminho.haslab.protocommunication.Search.RegionLocationResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static pt.uminho.haslab.protocommunication.Search.RegionIdentifierLocationResponse parseFrom(
+    public static pt.uminho.haslab.protocommunication.Search.RegionLocationResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static pt.uminho.haslab.protocommunication.Search.RegionIdentifierLocationResponse parseFrom(byte[] data)
+    public static pt.uminho.haslab.protocommunication.Search.RegionLocationResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static pt.uminho.haslab.protocommunication.Search.RegionIdentifierLocationResponse parseFrom(
+    public static pt.uminho.haslab.protocommunication.Search.RegionLocationResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static pt.uminho.haslab.protocommunication.Search.RegionIdentifierLocationResponse parseFrom(java.io.InputStream input)
+    public static pt.uminho.haslab.protocommunication.Search.RegionLocationResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static pt.uminho.haslab.protocommunication.Search.RegionIdentifierLocationResponse parseFrom(
+    public static pt.uminho.haslab.protocommunication.Search.RegionLocationResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static pt.uminho.haslab.protocommunication.Search.RegionIdentifierLocationResponse parseDelimitedFrom(java.io.InputStream input)
+    public static pt.uminho.haslab.protocommunication.Search.RegionLocationResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static pt.uminho.haslab.protocommunication.Search.RegionIdentifierLocationResponse parseDelimitedFrom(
+    public static pt.uminho.haslab.protocommunication.Search.RegionLocationResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static pt.uminho.haslab.protocommunication.Search.RegionIdentifierLocationResponse parseFrom(
+    public static pt.uminho.haslab.protocommunication.Search.RegionLocationResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static pt.uminho.haslab.protocommunication.Search.RegionIdentifierLocationResponse parseFrom(
+    public static pt.uminho.haslab.protocommunication.Search.RegionLocationResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -5071,7 +5013,7 @@ public final class Search {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(pt.uminho.haslab.protocommunication.Search.RegionIdentifierLocationResponse prototype) {
+    public static Builder newBuilder(pt.uminho.haslab.protocommunication.Search.RegionLocationResponse prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -5083,24 +5025,24 @@ public final class Search {
       return builder;
     }
     /**
-     * Protobuf type {@code protocommunication.RegionIdentifierLocationResponse}
+     * Protobuf type {@code protocommunication.RegionLocationResponse}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements pt.uminho.haslab.protocommunication.Search.RegionIdentifierLocationResponseOrBuilder {
+       implements pt.uminho.haslab.protocommunication.Search.RegionLocationResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return pt.uminho.haslab.protocommunication.Search.internal_static_protocommunication_RegionIdentifierLocationResponse_descriptor;
+        return pt.uminho.haslab.protocommunication.Search.internal_static_protocommunication_RegionLocationResponse_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return pt.uminho.haslab.protocommunication.Search.internal_static_protocommunication_RegionIdentifierLocationResponse_fieldAccessorTable
+        return pt.uminho.haslab.protocommunication.Search.internal_static_protocommunication_RegionLocationResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                pt.uminho.haslab.protocommunication.Search.RegionIdentifierLocationResponse.class, pt.uminho.haslab.protocommunication.Search.RegionIdentifierLocationResponse.Builder.class);
+                pt.uminho.haslab.protocommunication.Search.RegionLocationResponse.class, pt.uminho.haslab.protocommunication.Search.RegionLocationResponse.Builder.class);
       }
 
-      // Construct using pt.uminho.haslab.protocommunication.Search.RegionIdentifierLocationResponse.newBuilder()
+      // Construct using pt.uminho.haslab.protocommunication.Search.RegionLocationResponse.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -5133,23 +5075,23 @@ public final class Search {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return pt.uminho.haslab.protocommunication.Search.internal_static_protocommunication_RegionIdentifierLocationResponse_descriptor;
+        return pt.uminho.haslab.protocommunication.Search.internal_static_protocommunication_RegionLocationResponse_descriptor;
       }
 
-      public pt.uminho.haslab.protocommunication.Search.RegionIdentifierLocationResponse getDefaultInstanceForType() {
-        return pt.uminho.haslab.protocommunication.Search.RegionIdentifierLocationResponse.getDefaultInstance();
+      public pt.uminho.haslab.protocommunication.Search.RegionLocationResponse getDefaultInstanceForType() {
+        return pt.uminho.haslab.protocommunication.Search.RegionLocationResponse.getDefaultInstance();
       }
 
-      public pt.uminho.haslab.protocommunication.Search.RegionIdentifierLocationResponse build() {
-        pt.uminho.haslab.protocommunication.Search.RegionIdentifierLocationResponse result = buildPartial();
+      public pt.uminho.haslab.protocommunication.Search.RegionLocationResponse build() {
+        pt.uminho.haslab.protocommunication.Search.RegionLocationResponse result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public pt.uminho.haslab.protocommunication.Search.RegionIdentifierLocationResponse buildPartial() {
-        pt.uminho.haslab.protocommunication.Search.RegionIdentifierLocationResponse result = new pt.uminho.haslab.protocommunication.Search.RegionIdentifierLocationResponse(this);
+      public pt.uminho.haslab.protocommunication.Search.RegionLocationResponse buildPartial() {
+        pt.uminho.haslab.protocommunication.Search.RegionLocationResponse result = new pt.uminho.haslab.protocommunication.Search.RegionLocationResponse(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -5166,16 +5108,16 @@ public final class Search {
       }
 
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof pt.uminho.haslab.protocommunication.Search.RegionIdentifierLocationResponse) {
-          return mergeFrom((pt.uminho.haslab.protocommunication.Search.RegionIdentifierLocationResponse)other);
+        if (other instanceof pt.uminho.haslab.protocommunication.Search.RegionLocationResponse) {
+          return mergeFrom((pt.uminho.haslab.protocommunication.Search.RegionLocationResponse)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(pt.uminho.haslab.protocommunication.Search.RegionIdentifierLocationResponse other) {
-        if (other == pt.uminho.haslab.protocommunication.Search.RegionIdentifierLocationResponse.getDefaultInstance()) return this;
+      public Builder mergeFrom(pt.uminho.haslab.protocommunication.Search.RegionLocationResponse other) {
+        if (other == pt.uminho.haslab.protocommunication.Search.RegionLocationResponse.getDefaultInstance()) return this;
         if (other.hasRegionAddress()) {
           setRegionAddress(other.getRegionAddress());
         }
@@ -5202,11 +5144,11 @@ public final class Search {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        pt.uminho.haslab.protocommunication.Search.RegionIdentifierLocationResponse parsedMessage = null;
+        pt.uminho.haslab.protocommunication.Search.RegionLocationResponse parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (pt.uminho.haslab.protocommunication.Search.RegionIdentifierLocationResponse) e.getUnfinishedMessage();
+          parsedMessage = (pt.uminho.haslab.protocommunication.Search.RegionLocationResponse) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -5286,15 +5228,15 @@ public final class Search {
         return this;
       }
 
-      // @@protoc_insertion_point(builder_scope:protocommunication.RegionIdentifierLocationResponse)
+      // @@protoc_insertion_point(builder_scope:protocommunication.RegionLocationResponse)
     }
 
     static {
-      defaultInstance = new RegionIdentifierLocationResponse(true);
+      defaultInstance = new RegionLocationResponse(true);
       defaultInstance.initFields();
     }
 
-    // @@protoc_insertion_point(class_scope:protocommunication.RegionIdentifierLocationResponse)
+    // @@protoc_insertion_point(class_scope:protocommunication.RegionLocationResponse)
   }
 
   public interface ShutdownOrBuilder
@@ -5632,15 +5574,15 @@ public final class Search {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_protocommunication_FilterIndexMessage_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_protocommunication_RequestRegionIdentifierLocation_descriptor;
+    internal_static_protocommunication_RequestRegionLocation_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_protocommunication_RequestRegionIdentifierLocation_fieldAccessorTable;
+      internal_static_protocommunication_RequestRegionLocation_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_protocommunication_RegionIdentifierLocationResponse_descriptor;
+    internal_static_protocommunication_RegionLocationResponse_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_protocommunication_RegionIdentifierLocationResponse_fieldAccessorTable;
+      internal_static_protocommunication_RegionLocationResponse_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
     internal_static_protocommunication_Shutdown_descriptor;
   private static
@@ -5669,13 +5611,12 @@ public final class Search {
       "\004 \002(\017\022\016\n\006values\030\005 \003(\014\022\020\n\010secretID\030\006 \003(\014\"" +
       "t\n\022FilterIndexMessage\022\021\n\trequestID\030\001 \002(\014" +
       "\022\020\n\010regionID\030\002 \002(\014\022\024\n\014playerSource\030\003 \002(\017" +
-      "\022\022\n\nplayerDest\030\004 \002(\017\022\017\n\007indexes\030\005 \003(\014\"V\n" +
-      "\037RequestRegionIdentifierLocation\022\020\n\010star" +
-      "tKey\030\001 \002(\014\022\016\n\006endKey\030\002 \002(\014\022\021\n\ttableName\030" +
-      "\003 \003(\014\"M\n RegionIdentifierLocationRespons" +
-      "e\022\025\n\rregionAddress\030\001 \002(\014\022\022\n\nregionPort\030\002" +
-      " \002(\017\"\n\n\010ShutdownB\'\n#pt.uminho.haslab.pro",
-      "tocommunicationH\001"
+      "\022\022\n\nplayerDest\030\004 \002(\017\022\017\n\007indexes\030\005 \003(\014\"L\n" +
+      "\025RequestRegionLocation\022\020\n\010startKey\030\001 \002(\014" +
+      "\022\016\n\006endKey\030\002 \002(\014\022\021\n\ttableName\030\003 \002(\014\"C\n\026R" +
+      "egionLocationResponse\022\025\n\rregionAddress\030\001" +
+      " \002(\014\022\022\n\nregionPort\030\002 \002(\017\"\n\n\010ShutdownB\'\n#" +
+      "pt.uminho.haslab.protocommunicationH\001"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -5712,17 +5653,17 @@ public final class Search {
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_protocommunication_FilterIndexMessage_descriptor,
               new java.lang.String[] { "RequestID", "RegionID", "PlayerSource", "PlayerDest", "Indexes", });
-          internal_static_protocommunication_RequestRegionIdentifierLocation_descriptor =
+          internal_static_protocommunication_RequestRegionLocation_descriptor =
             getDescriptor().getMessageTypes().get(5);
-          internal_static_protocommunication_RequestRegionIdentifierLocation_fieldAccessorTable = new
+          internal_static_protocommunication_RequestRegionLocation_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_protocommunication_RequestRegionIdentifierLocation_descriptor,
+              internal_static_protocommunication_RequestRegionLocation_descriptor,
               new java.lang.String[] { "StartKey", "EndKey", "TableName", });
-          internal_static_protocommunication_RegionIdentifierLocationResponse_descriptor =
+          internal_static_protocommunication_RegionLocationResponse_descriptor =
             getDescriptor().getMessageTypes().get(6);
-          internal_static_protocommunication_RegionIdentifierLocationResponse_fieldAccessorTable = new
+          internal_static_protocommunication_RegionLocationResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_protocommunication_RegionIdentifierLocationResponse_descriptor,
+              internal_static_protocommunication_RegionLocationResponse_descriptor,
               new java.lang.String[] { "RegionAddress", "RegionPort", });
           internal_static_protocommunication_Shutdown_descriptor =
             getDescriptor().getMessageTypes().get(7);
