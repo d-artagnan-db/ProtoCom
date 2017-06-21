@@ -58,6 +58,15 @@ message RegionLocationResponse{
     required sfixed32 regionPort = 2;
 }
 
+message RegionServerID{
+    required bytes relayAddress = 1;
+    required sfixed32 relayPort = 2;
+    required bytes rsAddress = 3;
+    required sfixed32 rsPort = 4;
+}
+
+
+
 message Shutdown{
 	
 }
