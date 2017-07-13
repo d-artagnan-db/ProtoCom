@@ -9,14 +9,6 @@ option optimize_for = SPEED;
  * running protocols.
 */
 
-message ShareMessage{
-    required bytes requestID = 1;
-    required bytes regionID = 2;
-    required sfixed32 playerSource = 3;
-    required sfixed32 playerDest = 4;
-    repeated bytes values = 5;
-}
-
 
 message ListShareMessage{
     repeated BatchShareMessage values = 1;
