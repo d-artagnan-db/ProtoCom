@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>pt.uminho.haslab</groupId>
     <artifactId>protocommunication</artifactId>
-    <version>1.1-SNAPSHOT</version>
+    <version>1.1.0</version>
     <name>protocommunication</name>
     <packaging>jar</packaging>
     <properties>
