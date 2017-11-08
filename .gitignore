@@ -16,7 +16,7 @@ hs_err_pid*
 
 #ide folers
 .idea
-.iml
+*.iml
 
 target/
 pom.xml.tag
