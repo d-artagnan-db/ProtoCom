@@ -28,7 +28,6 @@ message ResultsMessage{
     required sfixed32 playerSource = 3;
     required sfixed32 playerDest = 4;
     repeated bytes values = 5;
-    repeated bytes secretID = 6;
 }
 
 message FilterIndexMessage{

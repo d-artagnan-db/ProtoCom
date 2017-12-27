@@ -1577,20 +1577,6 @@ public final class Search {
      * <code>repeated bytes values = 5;</code>
      */
     com.google.protobuf.ByteString getValues(int index);
-
-    // repeated bytes secretID = 6;
-    /**
-     * <code>repeated bytes secretID = 6;</code>
-     */
-    java.util.List<com.google.protobuf.ByteString> getSecretIDList();
-    /**
-     * <code>repeated bytes secretID = 6;</code>
-     */
-    int getSecretIDCount();
-    /**
-     * <code>repeated bytes secretID = 6;</code>
-     */
-    com.google.protobuf.ByteString getSecretID(int index);
   }
   /**
    * Protobuf type {@code protocommunication.ResultsMessage}
@@ -1671,14 +1657,6 @@ public final class Search {
               values_.add(input.readBytes());
               break;
             }
-            case 50: {
-              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
-                secretID_ = new java.util.ArrayList<com.google.protobuf.ByteString>();
-                mutable_bitField0_ |= 0x00000020;
-              }
-              secretID_.add(input.readBytes());
-              break;
-            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -1689,9 +1667,6 @@ public final class Search {
       } finally {
         if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
           values_ = java.util.Collections.unmodifiableList(values_);
-        }
-        if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
-          secretID_ = java.util.Collections.unmodifiableList(secretID_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -1812,36 +1787,12 @@ public final class Search {
       return values_.get(index);
     }
 
-    // repeated bytes secretID = 6;
-    public static final int SECRETID_FIELD_NUMBER = 6;
-    private java.util.List<com.google.protobuf.ByteString> secretID_;
-    /**
-     * <code>repeated bytes secretID = 6;</code>
-     */
-    public java.util.List<com.google.protobuf.ByteString>
-        getSecretIDList() {
-      return secretID_;
-    }
-    /**
-     * <code>repeated bytes secretID = 6;</code>
-     */
-    public int getSecretIDCount() {
-      return secretID_.size();
-    }
-    /**
-     * <code>repeated bytes secretID = 6;</code>
-     */
-    public com.google.protobuf.ByteString getSecretID(int index) {
-      return secretID_.get(index);
-    }
-
     private void initFields() {
       requestID_ = com.google.protobuf.ByteString.EMPTY;
       regionID_ = com.google.protobuf.ByteString.EMPTY;
       playerSource_ = 0;
       playerDest_ = 0;
       values_ = java.util.Collections.emptyList();
-      secretID_ = java.util.Collections.emptyList();
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -1886,9 +1837,6 @@ public final class Search {
       for (int i = 0; i < values_.size(); i++) {
         output.writeBytes(5, values_.get(i));
       }
-      for (int i = 0; i < secretID_.size(); i++) {
-        output.writeBytes(6, secretID_.get(i));
-      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1922,15 +1870,6 @@ public final class Search {
         }
         size += dataSize;
         size += 1 * getValuesList().size();
-      }
-      {
-        int dataSize = 0;
-        for (int i = 0; i < secretID_.size(); i++) {
-          dataSize += com.google.protobuf.CodedOutputStream
-            .computeBytesSizeNoTag(secretID_.get(i));
-        }
-        size += dataSize;
-        size += 1 * getSecretIDList().size();
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -2058,8 +1997,6 @@ public final class Search {
         bitField0_ = (bitField0_ & ~0x00000008);
         values_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000010);
-        secretID_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
         return this;
       }
 
@@ -2109,11 +2046,6 @@ public final class Search {
           bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.values_ = values_;
-        if (((bitField0_ & 0x00000020) == 0x00000020)) {
-          secretID_ = java.util.Collections.unmodifiableList(secretID_);
-          bitField0_ = (bitField0_ & ~0x00000020);
-        }
-        result.secretID_ = secretID_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -2149,16 +2081,6 @@ public final class Search {
           } else {
             ensureValuesIsMutable();
             values_.addAll(other.values_);
-          }
-          onChanged();
-        }
-        if (!other.secretID_.isEmpty()) {
-          if (secretID_.isEmpty()) {
-            secretID_ = other.secretID_;
-            bitField0_ = (bitField0_ & ~0x00000020);
-          } else {
-            ensureSecretIDIsMutable();
-            secretID_.addAll(other.secretID_);
           }
           onChanged();
         }
@@ -2411,78 +2333,6 @@ public final class Search {
       public Builder clearValues() {
         values_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000010);
-        onChanged();
-        return this;
-      }
-
-      // repeated bytes secretID = 6;
-      private java.util.List<com.google.protobuf.ByteString> secretID_ = java.util.Collections.emptyList();
-      private void ensureSecretIDIsMutable() {
-        if (!((bitField0_ & 0x00000020) == 0x00000020)) {
-          secretID_ = new java.util.ArrayList<com.google.protobuf.ByteString>(secretID_);
-          bitField0_ |= 0x00000020;
-         }
-      }
-      /**
-       * <code>repeated bytes secretID = 6;</code>
-       */
-      public java.util.List<com.google.protobuf.ByteString>
-          getSecretIDList() {
-        return java.util.Collections.unmodifiableList(secretID_);
-      }
-      /**
-       * <code>repeated bytes secretID = 6;</code>
-       */
-      public int getSecretIDCount() {
-        return secretID_.size();
-      }
-      /**
-       * <code>repeated bytes secretID = 6;</code>
-       */
-      public com.google.protobuf.ByteString getSecretID(int index) {
-        return secretID_.get(index);
-      }
-      /**
-       * <code>repeated bytes secretID = 6;</code>
-       */
-      public Builder setSecretID(
-          int index, com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureSecretIDIsMutable();
-        secretID_.set(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated bytes secretID = 6;</code>
-       */
-      public Builder addSecretID(com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureSecretIDIsMutable();
-        secretID_.add(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated bytes secretID = 6;</code>
-       */
-      public Builder addAllSecretID(
-          java.lang.Iterable<? extends com.google.protobuf.ByteString> values) {
-        ensureSecretIDIsMutable();
-        super.addAll(values, secretID_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated bytes secretID = 6;</code>
-       */
-      public Builder clearSecretID() {
-        secretID_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
         return this;
       }
@@ -3673,15 +3523,14 @@ public final class Search {
       "\0132%.protocommunication.BatchShareMessage" +
       "\"r\n\021BatchShareMessage\022\021\n\trequestID\030\001 \002(\014" +
       "\022\020\n\010regionID\030\002 \002(\014\022\024\n\014playerSource\030\003 \002(\017" +
-      "\022\022\n\nplayerDest\030\004 \002(\017\022\016\n\006values\030\005 \003(\014\"\201\001\n" +
-      "\016ResultsMessage\022\021\n\trequestID\030\001 \002(\014\022\020\n\010re" +
-      "gionID\030\002 \002(\014\022\024\n\014playerSource\030\003 \002(\017\022\022\n\npl" +
-      "ayerDest\030\004 \002(\017\022\016\n\006values\030\005 \003(\014\022\020\n\010secret" +
-      "ID\030\006 \003(\014\"t\n\022FilterIndexMessage\022\021\n\treques",
-      "tID\030\001 \002(\014\022\020\n\010regionID\030\002 \002(\014\022\024\n\014playerSou" +
-      "rce\030\003 \002(\017\022\022\n\nplayerDest\030\004 \002(\017\022\017\n\007indexes" +
-      "\030\005 \003(\014\"\n\n\010ShutdownB\'\n#pt.uminho.haslab.p" +
-      "rotocommunicationH\001"
+      "\022\022\n\nplayerDest\030\004 \002(\017\022\016\n\006values\030\005 \003(\014\"o\n\016" +
+      "ResultsMessage\022\021\n\trequestID\030\001 \002(\014\022\020\n\010reg" +
+      "ionID\030\002 \002(\014\022\024\n\014playerSource\030\003 \002(\017\022\022\n\npla" +
+      "yerDest\030\004 \002(\017\022\016\n\006values\030\005 \003(\014\"t\n\022FilterI" +
+      "ndexMessage\022\021\n\trequestID\030\001 \002(\014\022\020\n\010region",
+      "ID\030\002 \002(\014\022\024\n\014playerSource\030\003 \002(\017\022\022\n\nplayer" +
+      "Dest\030\004 \002(\017\022\017\n\007indexes\030\005 \003(\014\"\n\n\010ShutdownB" +
+      "\'\n#pt.uminho.haslab.protocommunicationH\001"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -3705,7 +3554,7 @@ public final class Search {
           internal_static_protocommunication_ResultsMessage_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_protocommunication_ResultsMessage_descriptor,
-              new java.lang.String[] { "RequestID", "RegionID", "PlayerSource", "PlayerDest", "Values", "SecretID", });
+              new java.lang.String[] { "RequestID", "RegionID", "PlayerSource", "PlayerDest", "Values", });
           internal_static_protocommunication_FilterIndexMessage_descriptor =
             getDescriptor().getMessageTypes().get(3);
           internal_static_protocommunication_FilterIndexMessage_fieldAccessorTable = new
