@@ -1521,6 +1521,1668 @@ public final class Search {
     // @@protoc_insertion_point(class_scope:protocommunication.BatchShareMessage)
   }
 
+  public interface IntBatchShareMessageOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+
+    // required bytes requestID = 1;
+    /**
+     * <code>required bytes requestID = 1;</code>
+     */
+    boolean hasRequestID();
+    /**
+     * <code>required bytes requestID = 1;</code>
+     */
+    com.google.protobuf.ByteString getRequestID();
+
+    // required bytes regionID = 2;
+    /**
+     * <code>required bytes regionID = 2;</code>
+     */
+    boolean hasRegionID();
+    /**
+     * <code>required bytes regionID = 2;</code>
+     */
+    com.google.protobuf.ByteString getRegionID();
+
+    // required sfixed32 playerSource = 3;
+    /**
+     * <code>required sfixed32 playerSource = 3;</code>
+     */
+    boolean hasPlayerSource();
+    /**
+     * <code>required sfixed32 playerSource = 3;</code>
+     */
+    int getPlayerSource();
+
+    // required sfixed32 playerDest = 4;
+    /**
+     * <code>required sfixed32 playerDest = 4;</code>
+     */
+    boolean hasPlayerDest();
+    /**
+     * <code>required sfixed32 playerDest = 4;</code>
+     */
+    int getPlayerDest();
+
+    // repeated sfixed32 values = 5;
+    /**
+     * <code>repeated sfixed32 values = 5;</code>
+     */
+    java.util.List<java.lang.Integer> getValuesList();
+    /**
+     * <code>repeated sfixed32 values = 5;</code>
+     */
+    int getValuesCount();
+    /**
+     * <code>repeated sfixed32 values = 5;</code>
+     */
+    int getValues(int index);
+  }
+  /**
+   * Protobuf type {@code protocommunication.IntBatchShareMessage}
+   */
+  public static final class IntBatchShareMessage extends
+      com.google.protobuf.GeneratedMessage
+      implements IntBatchShareMessageOrBuilder {
+    // Use IntBatchShareMessage.newBuilder() to construct.
+    private IntBatchShareMessage(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private IntBatchShareMessage(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final IntBatchShareMessage defaultInstance;
+    public static IntBatchShareMessage getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public IntBatchShareMessage getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private IntBatchShareMessage(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              bitField0_ |= 0x00000001;
+              requestID_ = input.readBytes();
+              break;
+            }
+            case 18: {
+              bitField0_ |= 0x00000002;
+              regionID_ = input.readBytes();
+              break;
+            }
+            case 29: {
+              bitField0_ |= 0x00000004;
+              playerSource_ = input.readSFixed32();
+              break;
+            }
+            case 37: {
+              bitField0_ |= 0x00000008;
+              playerDest_ = input.readSFixed32();
+              break;
+            }
+            case 45: {
+              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+                values_ = new java.util.ArrayList<java.lang.Integer>();
+                mutable_bitField0_ |= 0x00000010;
+              }
+              values_.add(input.readSFixed32());
+              break;
+            }
+            case 42: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010) && input.getBytesUntilLimit() > 0) {
+                values_ = new java.util.ArrayList<java.lang.Integer>();
+                mutable_bitField0_ |= 0x00000010;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                values_.add(input.readSFixed32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+          values_ = java.util.Collections.unmodifiableList(values_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return pt.uminho.haslab.protocommunication.Search.internal_static_protocommunication_IntBatchShareMessage_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return pt.uminho.haslab.protocommunication.Search.internal_static_protocommunication_IntBatchShareMessage_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              pt.uminho.haslab.protocommunication.Search.IntBatchShareMessage.class, pt.uminho.haslab.protocommunication.Search.IntBatchShareMessage.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<IntBatchShareMessage> PARSER =
+        new com.google.protobuf.AbstractParser<IntBatchShareMessage>() {
+      public IntBatchShareMessage parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new IntBatchShareMessage(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<IntBatchShareMessage> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    // required bytes requestID = 1;
+    public static final int REQUESTID_FIELD_NUMBER = 1;
+    private com.google.protobuf.ByteString requestID_;
+    /**
+     * <code>required bytes requestID = 1;</code>
+     */
+    public boolean hasRequestID() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required bytes requestID = 1;</code>
+     */
+    public com.google.protobuf.ByteString getRequestID() {
+      return requestID_;
+    }
+
+    // required bytes regionID = 2;
+    public static final int REGIONID_FIELD_NUMBER = 2;
+    private com.google.protobuf.ByteString regionID_;
+    /**
+     * <code>required bytes regionID = 2;</code>
+     */
+    public boolean hasRegionID() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required bytes regionID = 2;</code>
+     */
+    public com.google.protobuf.ByteString getRegionID() {
+      return regionID_;
+    }
+
+    // required sfixed32 playerSource = 3;
+    public static final int PLAYERSOURCE_FIELD_NUMBER = 3;
+    private int playerSource_;
+    /**
+     * <code>required sfixed32 playerSource = 3;</code>
+     */
+    public boolean hasPlayerSource() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>required sfixed32 playerSource = 3;</code>
+     */
+    public int getPlayerSource() {
+      return playerSource_;
+    }
+
+    // required sfixed32 playerDest = 4;
+    public static final int PLAYERDEST_FIELD_NUMBER = 4;
+    private int playerDest_;
+    /**
+     * <code>required sfixed32 playerDest = 4;</code>
+     */
+    public boolean hasPlayerDest() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>required sfixed32 playerDest = 4;</code>
+     */
+    public int getPlayerDest() {
+      return playerDest_;
+    }
+
+    // repeated sfixed32 values = 5;
+    public static final int VALUES_FIELD_NUMBER = 5;
+    private java.util.List<java.lang.Integer> values_;
+    /**
+     * <code>repeated sfixed32 values = 5;</code>
+     */
+    public java.util.List<java.lang.Integer>
+        getValuesList() {
+      return values_;
+    }
+    /**
+     * <code>repeated sfixed32 values = 5;</code>
+     */
+    public int getValuesCount() {
+      return values_.size();
+    }
+    /**
+     * <code>repeated sfixed32 values = 5;</code>
+     */
+    public int getValues(int index) {
+      return values_.get(index);
+    }
+
+    private void initFields() {
+      requestID_ = com.google.protobuf.ByteString.EMPTY;
+      regionID_ = com.google.protobuf.ByteString.EMPTY;
+      playerSource_ = 0;
+      playerDest_ = 0;
+      values_ = java.util.Collections.emptyList();
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      if (!hasRequestID()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasRegionID()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasPlayerSource()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasPlayerDest()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, requestID_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, regionID_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeSFixed32(3, playerSource_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeSFixed32(4, playerDest_);
+      }
+      for (int i = 0; i < values_.size(); i++) {
+        output.writeSFixed32(5, values_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, requestID_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, regionID_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeSFixed32Size(3, playerSource_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeSFixed32Size(4, playerDest_);
+      }
+      {
+        int dataSize = 0;
+        dataSize = 4 * getValuesList().size();
+        size += dataSize;
+        size += 1 * getValuesList().size();
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static pt.uminho.haslab.protocommunication.Search.IntBatchShareMessage parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static pt.uminho.haslab.protocommunication.Search.IntBatchShareMessage parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static pt.uminho.haslab.protocommunication.Search.IntBatchShareMessage parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static pt.uminho.haslab.protocommunication.Search.IntBatchShareMessage parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static pt.uminho.haslab.protocommunication.Search.IntBatchShareMessage parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static pt.uminho.haslab.protocommunication.Search.IntBatchShareMessage parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static pt.uminho.haslab.protocommunication.Search.IntBatchShareMessage parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static pt.uminho.haslab.protocommunication.Search.IntBatchShareMessage parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static pt.uminho.haslab.protocommunication.Search.IntBatchShareMessage parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static pt.uminho.haslab.protocommunication.Search.IntBatchShareMessage parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(pt.uminho.haslab.protocommunication.Search.IntBatchShareMessage prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code protocommunication.IntBatchShareMessage}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements pt.uminho.haslab.protocommunication.Search.IntBatchShareMessageOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return pt.uminho.haslab.protocommunication.Search.internal_static_protocommunication_IntBatchShareMessage_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return pt.uminho.haslab.protocommunication.Search.internal_static_protocommunication_IntBatchShareMessage_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                pt.uminho.haslab.protocommunication.Search.IntBatchShareMessage.class, pt.uminho.haslab.protocommunication.Search.IntBatchShareMessage.Builder.class);
+      }
+
+      // Construct using pt.uminho.haslab.protocommunication.Search.IntBatchShareMessage.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        requestID_ = com.google.protobuf.ByteString.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        regionID_ = com.google.protobuf.ByteString.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        playerSource_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        playerDest_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        values_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return pt.uminho.haslab.protocommunication.Search.internal_static_protocommunication_IntBatchShareMessage_descriptor;
+      }
+
+      public pt.uminho.haslab.protocommunication.Search.IntBatchShareMessage getDefaultInstanceForType() {
+        return pt.uminho.haslab.protocommunication.Search.IntBatchShareMessage.getDefaultInstance();
+      }
+
+      public pt.uminho.haslab.protocommunication.Search.IntBatchShareMessage build() {
+        pt.uminho.haslab.protocommunication.Search.IntBatchShareMessage result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public pt.uminho.haslab.protocommunication.Search.IntBatchShareMessage buildPartial() {
+        pt.uminho.haslab.protocommunication.Search.IntBatchShareMessage result = new pt.uminho.haslab.protocommunication.Search.IntBatchShareMessage(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.requestID_ = requestID_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.regionID_ = regionID_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.playerSource_ = playerSource_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.playerDest_ = playerDest_;
+        if (((bitField0_ & 0x00000010) == 0x00000010)) {
+          values_ = java.util.Collections.unmodifiableList(values_);
+          bitField0_ = (bitField0_ & ~0x00000010);
+        }
+        result.values_ = values_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof pt.uminho.haslab.protocommunication.Search.IntBatchShareMessage) {
+          return mergeFrom((pt.uminho.haslab.protocommunication.Search.IntBatchShareMessage)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(pt.uminho.haslab.protocommunication.Search.IntBatchShareMessage other) {
+        if (other == pt.uminho.haslab.protocommunication.Search.IntBatchShareMessage.getDefaultInstance()) return this;
+        if (other.hasRequestID()) {
+          setRequestID(other.getRequestID());
+        }
+        if (other.hasRegionID()) {
+          setRegionID(other.getRegionID());
+        }
+        if (other.hasPlayerSource()) {
+          setPlayerSource(other.getPlayerSource());
+        }
+        if (other.hasPlayerDest()) {
+          setPlayerDest(other.getPlayerDest());
+        }
+        if (!other.values_.isEmpty()) {
+          if (values_.isEmpty()) {
+            values_ = other.values_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+          } else {
+            ensureValuesIsMutable();
+            values_.addAll(other.values_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasRequestID()) {
+          
+          return false;
+        }
+        if (!hasRegionID()) {
+          
+          return false;
+        }
+        if (!hasPlayerSource()) {
+          
+          return false;
+        }
+        if (!hasPlayerDest()) {
+          
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        pt.uminho.haslab.protocommunication.Search.IntBatchShareMessage parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (pt.uminho.haslab.protocommunication.Search.IntBatchShareMessage) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      // required bytes requestID = 1;
+      private com.google.protobuf.ByteString requestID_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>required bytes requestID = 1;</code>
+       */
+      public boolean hasRequestID() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required bytes requestID = 1;</code>
+       */
+      public com.google.protobuf.ByteString getRequestID() {
+        return requestID_;
+      }
+      /**
+       * <code>required bytes requestID = 1;</code>
+       */
+      public Builder setRequestID(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        requestID_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required bytes requestID = 1;</code>
+       */
+      public Builder clearRequestID() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        requestID_ = getDefaultInstance().getRequestID();
+        onChanged();
+        return this;
+      }
+
+      // required bytes regionID = 2;
+      private com.google.protobuf.ByteString regionID_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>required bytes regionID = 2;</code>
+       */
+      public boolean hasRegionID() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required bytes regionID = 2;</code>
+       */
+      public com.google.protobuf.ByteString getRegionID() {
+        return regionID_;
+      }
+      /**
+       * <code>required bytes regionID = 2;</code>
+       */
+      public Builder setRegionID(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        regionID_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required bytes regionID = 2;</code>
+       */
+      public Builder clearRegionID() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        regionID_ = getDefaultInstance().getRegionID();
+        onChanged();
+        return this;
+      }
+
+      // required sfixed32 playerSource = 3;
+      private int playerSource_ ;
+      /**
+       * <code>required sfixed32 playerSource = 3;</code>
+       */
+      public boolean hasPlayerSource() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>required sfixed32 playerSource = 3;</code>
+       */
+      public int getPlayerSource() {
+        return playerSource_;
+      }
+      /**
+       * <code>required sfixed32 playerSource = 3;</code>
+       */
+      public Builder setPlayerSource(int value) {
+        bitField0_ |= 0x00000004;
+        playerSource_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required sfixed32 playerSource = 3;</code>
+       */
+      public Builder clearPlayerSource() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        playerSource_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // required sfixed32 playerDest = 4;
+      private int playerDest_ ;
+      /**
+       * <code>required sfixed32 playerDest = 4;</code>
+       */
+      public boolean hasPlayerDest() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>required sfixed32 playerDest = 4;</code>
+       */
+      public int getPlayerDest() {
+        return playerDest_;
+      }
+      /**
+       * <code>required sfixed32 playerDest = 4;</code>
+       */
+      public Builder setPlayerDest(int value) {
+        bitField0_ |= 0x00000008;
+        playerDest_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required sfixed32 playerDest = 4;</code>
+       */
+      public Builder clearPlayerDest() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        playerDest_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // repeated sfixed32 values = 5;
+      private java.util.List<java.lang.Integer> values_ = java.util.Collections.emptyList();
+      private void ensureValuesIsMutable() {
+        if (!((bitField0_ & 0x00000010) == 0x00000010)) {
+          values_ = new java.util.ArrayList<java.lang.Integer>(values_);
+          bitField0_ |= 0x00000010;
+         }
+      }
+      /**
+       * <code>repeated sfixed32 values = 5;</code>
+       */
+      public java.util.List<java.lang.Integer>
+          getValuesList() {
+        return java.util.Collections.unmodifiableList(values_);
+      }
+      /**
+       * <code>repeated sfixed32 values = 5;</code>
+       */
+      public int getValuesCount() {
+        return values_.size();
+      }
+      /**
+       * <code>repeated sfixed32 values = 5;</code>
+       */
+      public int getValues(int index) {
+        return values_.get(index);
+      }
+      /**
+       * <code>repeated sfixed32 values = 5;</code>
+       */
+      public Builder setValues(
+          int index, int value) {
+        ensureValuesIsMutable();
+        values_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated sfixed32 values = 5;</code>
+       */
+      public Builder addValues(int value) {
+        ensureValuesIsMutable();
+        values_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated sfixed32 values = 5;</code>
+       */
+      public Builder addAllValues(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureValuesIsMutable();
+        super.addAll(values, values_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated sfixed32 values = 5;</code>
+       */
+      public Builder clearValues() {
+        values_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:protocommunication.IntBatchShareMessage)
+    }
+
+    static {
+      defaultInstance = new IntBatchShareMessage(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:protocommunication.IntBatchShareMessage)
+  }
+
+  public interface IntResultsMessageOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+
+    // required bytes requestID = 1;
+    /**
+     * <code>required bytes requestID = 1;</code>
+     */
+    boolean hasRequestID();
+    /**
+     * <code>required bytes requestID = 1;</code>
+     */
+    com.google.protobuf.ByteString getRequestID();
+
+    // required bytes regionID = 2;
+    /**
+     * <code>required bytes regionID = 2;</code>
+     */
+    boolean hasRegionID();
+    /**
+     * <code>required bytes regionID = 2;</code>
+     */
+    com.google.protobuf.ByteString getRegionID();
+
+    // required sfixed32 playerSource = 3;
+    /**
+     * <code>required sfixed32 playerSource = 3;</code>
+     */
+    boolean hasPlayerSource();
+    /**
+     * <code>required sfixed32 playerSource = 3;</code>
+     */
+    int getPlayerSource();
+
+    // required sfixed32 playerDest = 4;
+    /**
+     * <code>required sfixed32 playerDest = 4;</code>
+     */
+    boolean hasPlayerDest();
+    /**
+     * <code>required sfixed32 playerDest = 4;</code>
+     */
+    int getPlayerDest();
+
+    // repeated sfixed32 values = 5;
+    /**
+     * <code>repeated sfixed32 values = 5;</code>
+     */
+    java.util.List<java.lang.Integer> getValuesList();
+    /**
+     * <code>repeated sfixed32 values = 5;</code>
+     */
+    int getValuesCount();
+    /**
+     * <code>repeated sfixed32 values = 5;</code>
+     */
+    int getValues(int index);
+  }
+  /**
+   * Protobuf type {@code protocommunication.IntResultsMessage}
+   */
+  public static final class IntResultsMessage extends
+      com.google.protobuf.GeneratedMessage
+      implements IntResultsMessageOrBuilder {
+    // Use IntResultsMessage.newBuilder() to construct.
+    private IntResultsMessage(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private IntResultsMessage(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final IntResultsMessage defaultInstance;
+    public static IntResultsMessage getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public IntResultsMessage getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private IntResultsMessage(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              bitField0_ |= 0x00000001;
+              requestID_ = input.readBytes();
+              break;
+            }
+            case 18: {
+              bitField0_ |= 0x00000002;
+              regionID_ = input.readBytes();
+              break;
+            }
+            case 29: {
+              bitField0_ |= 0x00000004;
+              playerSource_ = input.readSFixed32();
+              break;
+            }
+            case 37: {
+              bitField0_ |= 0x00000008;
+              playerDest_ = input.readSFixed32();
+              break;
+            }
+            case 45: {
+              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+                values_ = new java.util.ArrayList<java.lang.Integer>();
+                mutable_bitField0_ |= 0x00000010;
+              }
+              values_.add(input.readSFixed32());
+              break;
+            }
+            case 42: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010) && input.getBytesUntilLimit() > 0) {
+                values_ = new java.util.ArrayList<java.lang.Integer>();
+                mutable_bitField0_ |= 0x00000010;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                values_.add(input.readSFixed32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+          values_ = java.util.Collections.unmodifiableList(values_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return pt.uminho.haslab.protocommunication.Search.internal_static_protocommunication_IntResultsMessage_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return pt.uminho.haslab.protocommunication.Search.internal_static_protocommunication_IntResultsMessage_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              pt.uminho.haslab.protocommunication.Search.IntResultsMessage.class, pt.uminho.haslab.protocommunication.Search.IntResultsMessage.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<IntResultsMessage> PARSER =
+        new com.google.protobuf.AbstractParser<IntResultsMessage>() {
+      public IntResultsMessage parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new IntResultsMessage(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<IntResultsMessage> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    // required bytes requestID = 1;
+    public static final int REQUESTID_FIELD_NUMBER = 1;
+    private com.google.protobuf.ByteString requestID_;
+    /**
+     * <code>required bytes requestID = 1;</code>
+     */
+    public boolean hasRequestID() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required bytes requestID = 1;</code>
+     */
+    public com.google.protobuf.ByteString getRequestID() {
+      return requestID_;
+    }
+
+    // required bytes regionID = 2;
+    public static final int REGIONID_FIELD_NUMBER = 2;
+    private com.google.protobuf.ByteString regionID_;
+    /**
+     * <code>required bytes regionID = 2;</code>
+     */
+    public boolean hasRegionID() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required bytes regionID = 2;</code>
+     */
+    public com.google.protobuf.ByteString getRegionID() {
+      return regionID_;
+    }
+
+    // required sfixed32 playerSource = 3;
+    public static final int PLAYERSOURCE_FIELD_NUMBER = 3;
+    private int playerSource_;
+    /**
+     * <code>required sfixed32 playerSource = 3;</code>
+     */
+    public boolean hasPlayerSource() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>required sfixed32 playerSource = 3;</code>
+     */
+    public int getPlayerSource() {
+      return playerSource_;
+    }
+
+    // required sfixed32 playerDest = 4;
+    public static final int PLAYERDEST_FIELD_NUMBER = 4;
+    private int playerDest_;
+    /**
+     * <code>required sfixed32 playerDest = 4;</code>
+     */
+    public boolean hasPlayerDest() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>required sfixed32 playerDest = 4;</code>
+     */
+    public int getPlayerDest() {
+      return playerDest_;
+    }
+
+    // repeated sfixed32 values = 5;
+    public static final int VALUES_FIELD_NUMBER = 5;
+    private java.util.List<java.lang.Integer> values_;
+    /**
+     * <code>repeated sfixed32 values = 5;</code>
+     */
+    public java.util.List<java.lang.Integer>
+        getValuesList() {
+      return values_;
+    }
+    /**
+     * <code>repeated sfixed32 values = 5;</code>
+     */
+    public int getValuesCount() {
+      return values_.size();
+    }
+    /**
+     * <code>repeated sfixed32 values = 5;</code>
+     */
+    public int getValues(int index) {
+      return values_.get(index);
+    }
+
+    private void initFields() {
+      requestID_ = com.google.protobuf.ByteString.EMPTY;
+      regionID_ = com.google.protobuf.ByteString.EMPTY;
+      playerSource_ = 0;
+      playerDest_ = 0;
+      values_ = java.util.Collections.emptyList();
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      if (!hasRequestID()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasRegionID()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasPlayerSource()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasPlayerDest()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, requestID_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, regionID_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeSFixed32(3, playerSource_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeSFixed32(4, playerDest_);
+      }
+      for (int i = 0; i < values_.size(); i++) {
+        output.writeSFixed32(5, values_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, requestID_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, regionID_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeSFixed32Size(3, playerSource_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeSFixed32Size(4, playerDest_);
+      }
+      {
+        int dataSize = 0;
+        dataSize = 4 * getValuesList().size();
+        size += dataSize;
+        size += 1 * getValuesList().size();
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static pt.uminho.haslab.protocommunication.Search.IntResultsMessage parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static pt.uminho.haslab.protocommunication.Search.IntResultsMessage parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static pt.uminho.haslab.protocommunication.Search.IntResultsMessage parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static pt.uminho.haslab.protocommunication.Search.IntResultsMessage parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static pt.uminho.haslab.protocommunication.Search.IntResultsMessage parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static pt.uminho.haslab.protocommunication.Search.IntResultsMessage parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static pt.uminho.haslab.protocommunication.Search.IntResultsMessage parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static pt.uminho.haslab.protocommunication.Search.IntResultsMessage parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static pt.uminho.haslab.protocommunication.Search.IntResultsMessage parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static pt.uminho.haslab.protocommunication.Search.IntResultsMessage parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(pt.uminho.haslab.protocommunication.Search.IntResultsMessage prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code protocommunication.IntResultsMessage}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements pt.uminho.haslab.protocommunication.Search.IntResultsMessageOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return pt.uminho.haslab.protocommunication.Search.internal_static_protocommunication_IntResultsMessage_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return pt.uminho.haslab.protocommunication.Search.internal_static_protocommunication_IntResultsMessage_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                pt.uminho.haslab.protocommunication.Search.IntResultsMessage.class, pt.uminho.haslab.protocommunication.Search.IntResultsMessage.Builder.class);
+      }
+
+      // Construct using pt.uminho.haslab.protocommunication.Search.IntResultsMessage.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        requestID_ = com.google.protobuf.ByteString.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        regionID_ = com.google.protobuf.ByteString.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        playerSource_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        playerDest_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        values_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return pt.uminho.haslab.protocommunication.Search.internal_static_protocommunication_IntResultsMessage_descriptor;
+      }
+
+      public pt.uminho.haslab.protocommunication.Search.IntResultsMessage getDefaultInstanceForType() {
+        return pt.uminho.haslab.protocommunication.Search.IntResultsMessage.getDefaultInstance();
+      }
+
+      public pt.uminho.haslab.protocommunication.Search.IntResultsMessage build() {
+        pt.uminho.haslab.protocommunication.Search.IntResultsMessage result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public pt.uminho.haslab.protocommunication.Search.IntResultsMessage buildPartial() {
+        pt.uminho.haslab.protocommunication.Search.IntResultsMessage result = new pt.uminho.haslab.protocommunication.Search.IntResultsMessage(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.requestID_ = requestID_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.regionID_ = regionID_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.playerSource_ = playerSource_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.playerDest_ = playerDest_;
+        if (((bitField0_ & 0x00000010) == 0x00000010)) {
+          values_ = java.util.Collections.unmodifiableList(values_);
+          bitField0_ = (bitField0_ & ~0x00000010);
+        }
+        result.values_ = values_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof pt.uminho.haslab.protocommunication.Search.IntResultsMessage) {
+          return mergeFrom((pt.uminho.haslab.protocommunication.Search.IntResultsMessage)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(pt.uminho.haslab.protocommunication.Search.IntResultsMessage other) {
+        if (other == pt.uminho.haslab.protocommunication.Search.IntResultsMessage.getDefaultInstance()) return this;
+        if (other.hasRequestID()) {
+          setRequestID(other.getRequestID());
+        }
+        if (other.hasRegionID()) {
+          setRegionID(other.getRegionID());
+        }
+        if (other.hasPlayerSource()) {
+          setPlayerSource(other.getPlayerSource());
+        }
+        if (other.hasPlayerDest()) {
+          setPlayerDest(other.getPlayerDest());
+        }
+        if (!other.values_.isEmpty()) {
+          if (values_.isEmpty()) {
+            values_ = other.values_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+          } else {
+            ensureValuesIsMutable();
+            values_.addAll(other.values_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasRequestID()) {
+          
+          return false;
+        }
+        if (!hasRegionID()) {
+          
+          return false;
+        }
+        if (!hasPlayerSource()) {
+          
+          return false;
+        }
+        if (!hasPlayerDest()) {
+          
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        pt.uminho.haslab.protocommunication.Search.IntResultsMessage parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (pt.uminho.haslab.protocommunication.Search.IntResultsMessage) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      // required bytes requestID = 1;
+      private com.google.protobuf.ByteString requestID_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>required bytes requestID = 1;</code>
+       */
+      public boolean hasRequestID() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required bytes requestID = 1;</code>
+       */
+      public com.google.protobuf.ByteString getRequestID() {
+        return requestID_;
+      }
+      /**
+       * <code>required bytes requestID = 1;</code>
+       */
+      public Builder setRequestID(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        requestID_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required bytes requestID = 1;</code>
+       */
+      public Builder clearRequestID() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        requestID_ = getDefaultInstance().getRequestID();
+        onChanged();
+        return this;
+      }
+
+      // required bytes regionID = 2;
+      private com.google.protobuf.ByteString regionID_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>required bytes regionID = 2;</code>
+       */
+      public boolean hasRegionID() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required bytes regionID = 2;</code>
+       */
+      public com.google.protobuf.ByteString getRegionID() {
+        return regionID_;
+      }
+      /**
+       * <code>required bytes regionID = 2;</code>
+       */
+      public Builder setRegionID(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        regionID_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required bytes regionID = 2;</code>
+       */
+      public Builder clearRegionID() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        regionID_ = getDefaultInstance().getRegionID();
+        onChanged();
+        return this;
+      }
+
+      // required sfixed32 playerSource = 3;
+      private int playerSource_ ;
+      /**
+       * <code>required sfixed32 playerSource = 3;</code>
+       */
+      public boolean hasPlayerSource() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>required sfixed32 playerSource = 3;</code>
+       */
+      public int getPlayerSource() {
+        return playerSource_;
+      }
+      /**
+       * <code>required sfixed32 playerSource = 3;</code>
+       */
+      public Builder setPlayerSource(int value) {
+        bitField0_ |= 0x00000004;
+        playerSource_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required sfixed32 playerSource = 3;</code>
+       */
+      public Builder clearPlayerSource() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        playerSource_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // required sfixed32 playerDest = 4;
+      private int playerDest_ ;
+      /**
+       * <code>required sfixed32 playerDest = 4;</code>
+       */
+      public boolean hasPlayerDest() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>required sfixed32 playerDest = 4;</code>
+       */
+      public int getPlayerDest() {
+        return playerDest_;
+      }
+      /**
+       * <code>required sfixed32 playerDest = 4;</code>
+       */
+      public Builder setPlayerDest(int value) {
+        bitField0_ |= 0x00000008;
+        playerDest_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required sfixed32 playerDest = 4;</code>
+       */
+      public Builder clearPlayerDest() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        playerDest_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // repeated sfixed32 values = 5;
+      private java.util.List<java.lang.Integer> values_ = java.util.Collections.emptyList();
+      private void ensureValuesIsMutable() {
+        if (!((bitField0_ & 0x00000010) == 0x00000010)) {
+          values_ = new java.util.ArrayList<java.lang.Integer>(values_);
+          bitField0_ |= 0x00000010;
+         }
+      }
+      /**
+       * <code>repeated sfixed32 values = 5;</code>
+       */
+      public java.util.List<java.lang.Integer>
+          getValuesList() {
+        return java.util.Collections.unmodifiableList(values_);
+      }
+      /**
+       * <code>repeated sfixed32 values = 5;</code>
+       */
+      public int getValuesCount() {
+        return values_.size();
+      }
+      /**
+       * <code>repeated sfixed32 values = 5;</code>
+       */
+      public int getValues(int index) {
+        return values_.get(index);
+      }
+      /**
+       * <code>repeated sfixed32 values = 5;</code>
+       */
+      public Builder setValues(
+          int index, int value) {
+        ensureValuesIsMutable();
+        values_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated sfixed32 values = 5;</code>
+       */
+      public Builder addValues(int value) {
+        ensureValuesIsMutable();
+        values_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated sfixed32 values = 5;</code>
+       */
+      public Builder addAllValues(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureValuesIsMutable();
+        super.addAll(values, values_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated sfixed32 values = 5;</code>
+       */
+      public Builder clearValues() {
+        values_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:protocommunication.IntResultsMessage)
+    }
+
+    static {
+      defaultInstance = new IntResultsMessage(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:protocommunication.IntResultsMessage)
+  }
+
   public interface ResultsMessageOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
 
@@ -3495,6 +5157,16 @@ public final class Search {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_protocommunication_BatchShareMessage_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_protocommunication_IntBatchShareMessage_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_protocommunication_IntBatchShareMessage_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_protocommunication_IntResultsMessage_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_protocommunication_IntResultsMessage_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
     internal_static_protocommunication_ResultsMessage_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -3523,14 +5195,20 @@ public final class Search {
       "\0132%.protocommunication.BatchShareMessage" +
       "\"r\n\021BatchShareMessage\022\021\n\trequestID\030\001 \002(\014" +
       "\022\020\n\010regionID\030\002 \002(\014\022\024\n\014playerSource\030\003 \002(\017" +
-      "\022\022\n\nplayerDest\030\004 \002(\017\022\016\n\006values\030\005 \003(\014\"o\n\016" +
-      "ResultsMessage\022\021\n\trequestID\030\001 \002(\014\022\020\n\010reg" +
-      "ionID\030\002 \002(\014\022\024\n\014playerSource\030\003 \002(\017\022\022\n\npla" +
-      "yerDest\030\004 \002(\017\022\016\n\006values\030\005 \003(\014\"t\n\022FilterI" +
-      "ndexMessage\022\021\n\trequestID\030\001 \002(\014\022\020\n\010region",
-      "ID\030\002 \002(\014\022\024\n\014playerSource\030\003 \002(\017\022\022\n\nplayer" +
-      "Dest\030\004 \002(\017\022\017\n\007indexes\030\005 \003(\014\"\n\n\010ShutdownB" +
-      "\'\n#pt.uminho.haslab.protocommunicationH\001"
+      "\022\022\n\nplayerDest\030\004 \002(\017\022\016\n\006values\030\005 \003(\014\"u\n\024" +
+      "IntBatchShareMessage\022\021\n\trequestID\030\001 \002(\014\022" +
+      "\020\n\010regionID\030\002 \002(\014\022\024\n\014playerSource\030\003 \002(\017\022" +
+      "\022\n\nplayerDest\030\004 \002(\017\022\016\n\006values\030\005 \003(\017\"r\n\021I" +
+      "ntResultsMessage\022\021\n\trequestID\030\001 \002(\014\022\020\n\010r",
+      "egionID\030\002 \002(\014\022\024\n\014playerSource\030\003 \002(\017\022\022\n\np" +
+      "layerDest\030\004 \002(\017\022\016\n\006values\030\005 \003(\017\"o\n\016Resul" +
+      "tsMessage\022\021\n\trequestID\030\001 \002(\014\022\020\n\010regionID" +
+      "\030\002 \002(\014\022\024\n\014playerSource\030\003 \002(\017\022\022\n\nplayerDe" +
+      "st\030\004 \002(\017\022\016\n\006values\030\005 \003(\014\"t\n\022FilterIndexM" +
+      "essage\022\021\n\trequestID\030\001 \002(\014\022\020\n\010regionID\030\002 " +
+      "\002(\014\022\024\n\014playerSource\030\003 \002(\017\022\022\n\nplayerDest\030" +
+      "\004 \002(\017\022\017\n\007indexes\030\005 \003(\014\"\n\n\010ShutdownB\'\n#pt" +
+      ".uminho.haslab.protocommunicationH\001"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -3549,20 +5227,32 @@ public final class Search {
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_protocommunication_BatchShareMessage_descriptor,
               new java.lang.String[] { "RequestID", "RegionID", "PlayerSource", "PlayerDest", "Values", });
-          internal_static_protocommunication_ResultsMessage_descriptor =
+          internal_static_protocommunication_IntBatchShareMessage_descriptor =
             getDescriptor().getMessageTypes().get(2);
+          internal_static_protocommunication_IntBatchShareMessage_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_protocommunication_IntBatchShareMessage_descriptor,
+              new java.lang.String[] { "RequestID", "RegionID", "PlayerSource", "PlayerDest", "Values", });
+          internal_static_protocommunication_IntResultsMessage_descriptor =
+            getDescriptor().getMessageTypes().get(3);
+          internal_static_protocommunication_IntResultsMessage_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_protocommunication_IntResultsMessage_descriptor,
+              new java.lang.String[] { "RequestID", "RegionID", "PlayerSource", "PlayerDest", "Values", });
+          internal_static_protocommunication_ResultsMessage_descriptor =
+            getDescriptor().getMessageTypes().get(4);
           internal_static_protocommunication_ResultsMessage_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_protocommunication_ResultsMessage_descriptor,
               new java.lang.String[] { "RequestID", "RegionID", "PlayerSource", "PlayerDest", "Values", });
           internal_static_protocommunication_FilterIndexMessage_descriptor =
-            getDescriptor().getMessageTypes().get(3);
+            getDescriptor().getMessageTypes().get(5);
           internal_static_protocommunication_FilterIndexMessage_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_protocommunication_FilterIndexMessage_descriptor,
               new java.lang.String[] { "RequestID", "RegionID", "PlayerSource", "PlayerDest", "Indexes", });
           internal_static_protocommunication_Shutdown_descriptor =
-            getDescriptor().getMessageTypes().get(4);
+            getDescriptor().getMessageTypes().get(6);
           internal_static_protocommunication_Shutdown_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_protocommunication_Shutdown_descriptor,
