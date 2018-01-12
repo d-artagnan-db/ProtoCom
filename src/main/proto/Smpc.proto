@@ -1,0 +1,38 @@
+package protocommunication;
+
+option java_package = "pt.uminho.haslab.protocommunication";
+option optimize_for = SPEED;
+option java_generic_services = true;
+option java_generate_equals_and_hash = true;
+
+message Cell{
+    required bytes columnFamily = 1;
+    required bytes columnQualifier = 2;
+    required bytes value = 3;
+    required bytes row = 4;
+    required sfixed64 timestamp = 5;
+    required bytes type = 6;
+}
+
+message Row{
+    repeated Cell cells = 1;
+}
+
+message Results{
+    repeated Row rows = 1;
+}
+
+
+message ScanMessage{
+    required bytes filter = 1;
+    required bytes startRow = 2;
+    required bytes stopRow = 3;
+    required bytes requestID = 4;
+    required sfixed32 targetPlayer = 5 ;
+}
+
+service ConcurrentScanService {
+    rpc scan(ScanMessage)
+    returns (Results);
+
+}

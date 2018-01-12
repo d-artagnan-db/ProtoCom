@@ -37,7 +37,6 @@ message IntResultsMessage{
     repeated sfixed32 values = 5;
 }
 
-
 message ResultsMessage{
     required bytes requestID = 1;
     required bytes regionID = 2;
