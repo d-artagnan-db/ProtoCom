@@ -21,22 +21,6 @@ message BatchShareMessage{
     repeated bytes values = 5;
 }
 
-message IntBatchShareMessage{
-    required bytes requestID = 1;
-    required bytes regionID = 2;
-    required sfixed32 playerSource = 3;
-    required sfixed32 playerDest = 4;
-    repeated sfixed32 values = 5;
-}
-
-message IntResultsMessage{
-    required bytes requestID = 1;
-    required bytes regionID = 2;
-    required sfixed32 playerSource = 3;
-    required sfixed32 playerDest = 4;
-    repeated sfixed32 values = 5;
-}
-
 message ResultsMessage{
     required bytes requestID = 1;
     required bytes regionID = 2;
@@ -52,6 +36,7 @@ message FilterIndexMessage{
     required sfixed32 playerDest = 4;
     repeated bytes indexes = 5;
 }
+
 
 message Shutdown{
 	

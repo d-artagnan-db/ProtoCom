@@ -2449,6 +2449,21 @@ public final class Smpc {
      * <code>required sfixed32 targetPlayer = 5;</code>
      */
     int getTargetPlayer();
+
+    // required string filterType = 6;
+    /**
+     * <code>required string filterType = 6;</code>
+     */
+    boolean hasFilterType();
+    /**
+     * <code>required string filterType = 6;</code>
+     */
+    java.lang.String getFilterType();
+    /**
+     * <code>required string filterType = 6;</code>
+     */
+    com.google.protobuf.ByteString
+        getFilterTypeBytes();
   }
   /**
    * Protobuf type {@code protocommunication.ScanMessage}
@@ -2524,6 +2539,11 @@ public final class Smpc {
             case 45: {
               bitField0_ |= 0x00000010;
               targetPlayer_ = input.readSFixed32();
+              break;
+            }
+            case 50: {
+              bitField0_ |= 0x00000020;
+              filterType_ = input.readBytes();
               break;
             }
           }
@@ -2646,12 +2666,56 @@ public final class Smpc {
       return targetPlayer_;
     }
 
+    // required string filterType = 6;
+    public static final int FILTERTYPE_FIELD_NUMBER = 6;
+    private java.lang.Object filterType_;
+    /**
+     * <code>required string filterType = 6;</code>
+     */
+    public boolean hasFilterType() {
+      return ((bitField0_ & 0x00000020) == 0x00000020);
+    }
+    /**
+     * <code>required string filterType = 6;</code>
+     */
+    public java.lang.String getFilterType() {
+      java.lang.Object ref = filterType_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          filterType_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string filterType = 6;</code>
+     */
+    public com.google.protobuf.ByteString
+        getFilterTypeBytes() {
+      java.lang.Object ref = filterType_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        filterType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private void initFields() {
       filter_ = com.google.protobuf.ByteString.EMPTY;
       startRow_ = com.google.protobuf.ByteString.EMPTY;
       stopRow_ = com.google.protobuf.ByteString.EMPTY;
       requestID_ = com.google.protobuf.ByteString.EMPTY;
       targetPlayer_ = 0;
+      filterType_ = "";
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -2678,6 +2742,10 @@ public final class Smpc {
         memoizedIsInitialized = 0;
         return false;
       }
+      if (!hasFilterType()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
       memoizedIsInitialized = 1;
       return true;
     }
@@ -2699,6 +2767,9 @@ public final class Smpc {
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         output.writeSFixed32(5, targetPlayer_);
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        output.writeBytes(6, getFilterTypeBytes());
       }
       getUnknownFields().writeTo(output);
     }
@@ -2728,6 +2799,10 @@ public final class Smpc {
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
           .computeSFixed32Size(5, targetPlayer_);
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(6, getFilterTypeBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -2777,6 +2852,11 @@ public final class Smpc {
         result = result && (getTargetPlayer()
             == other.getTargetPlayer());
       }
+      result = result && (hasFilterType() == other.hasFilterType());
+      if (hasFilterType()) {
+        result = result && getFilterType()
+            .equals(other.getFilterType());
+      }
       result = result &&
           getUnknownFields().equals(other.getUnknownFields());
       return result;
@@ -2809,6 +2889,10 @@ public final class Smpc {
       if (hasTargetPlayer()) {
         hash = (37 * hash) + TARGETPLAYER_FIELD_NUMBER;
         hash = (53 * hash) + getTargetPlayer();
+      }
+      if (hasFilterType()) {
+        hash = (37 * hash) + FILTERTYPE_FIELD_NUMBER;
+        hash = (53 * hash) + getFilterType().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -2929,6 +3013,8 @@ public final class Smpc {
         bitField0_ = (bitField0_ & ~0x00000008);
         targetPlayer_ = 0;
         bitField0_ = (bitField0_ & ~0x00000010);
+        filterType_ = "";
+        bitField0_ = (bitField0_ & ~0x00000020);
         return this;
       }
 
@@ -2977,6 +3063,10 @@ public final class Smpc {
           to_bitField0_ |= 0x00000010;
         }
         result.targetPlayer_ = targetPlayer_;
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+          to_bitField0_ |= 0x00000020;
+        }
+        result.filterType_ = filterType_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -3008,6 +3098,11 @@ public final class Smpc {
         if (other.hasTargetPlayer()) {
           setTargetPlayer(other.getTargetPlayer());
         }
+        if (other.hasFilterType()) {
+          bitField0_ |= 0x00000020;
+          filterType_ = other.filterType_;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
@@ -3030,6 +3125,10 @@ public final class Smpc {
           return false;
         }
         if (!hasTargetPlayer()) {
+          
+          return false;
+        }
+        if (!hasFilterType()) {
           
           return false;
         }
@@ -3228,6 +3327,80 @@ public final class Smpc {
       public Builder clearTargetPlayer() {
         bitField0_ = (bitField0_ & ~0x00000010);
         targetPlayer_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // required string filterType = 6;
+      private java.lang.Object filterType_ = "";
+      /**
+       * <code>required string filterType = 6;</code>
+       */
+      public boolean hasFilterType() {
+        return ((bitField0_ & 0x00000020) == 0x00000020);
+      }
+      /**
+       * <code>required string filterType = 6;</code>
+       */
+      public java.lang.String getFilterType() {
+        java.lang.Object ref = filterType_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          filterType_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string filterType = 6;</code>
+       */
+      public com.google.protobuf.ByteString
+          getFilterTypeBytes() {
+        java.lang.Object ref = filterType_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          filterType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string filterType = 6;</code>
+       */
+      public Builder setFilterType(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000020;
+        filterType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string filterType = 6;</code>
+       */
+      public Builder clearFilterType() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        filterType_ = getDefaultInstance().getFilterType();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string filterType = 6;</code>
+       */
+      public Builder setFilterTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000020;
+        filterType_ = value;
         onChanged();
         return this;
       }
@@ -3510,13 +3683,14 @@ public final class Smpc {
       "\030\004 \002(\014\022\021\n\ttimestamp\030\005 \002(\020\022\014\n\004type\030\006 \002(\014\"" +
       ".\n\003Row\022\'\n\005cells\030\001 \003(\0132\030.protocommunicati" +
       "on.Cell\"0\n\007Results\022%\n\004rows\030\001 \003(\0132\027.proto" +
-      "communication.Row\"i\n\013ScanMessage\022\016\n\006filt" +
+      "communication.Row\"}\n\013ScanMessage\022\016\n\006filt" +
       "er\030\001 \002(\014\022\020\n\010startRow\030\002 \002(\014\022\017\n\007stopRow\030\003 " +
       "\002(\014\022\021\n\trequestID\030\004 \002(\014\022\024\n\014targetPlayer\030\005" +
-      " \002(\0172]\n\025ConcurrentScanService\022D\n\004scan\022\037.",
-      "protocommunication.ScanMessage\032\033.protoco" +
-      "mmunication.ResultsB-\n#pt.uminho.haslab." +
-      "protocommunicationH\001\210\001\001\240\001\001"
+      " \002(\017\022\022\n\nfilterType\030\006 \002(\t2]\n\025ConcurrentSc",
+      "anService\022D\n\004scan\022\037.protocommunication.S" +
+      "canMessage\032\033.protocommunication.ResultsB" +
+      "-\n#pt.uminho.haslab.protocommunicationH\001" +
+      "\210\001\001\240\001\001"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -3546,7 +3720,7 @@ public final class Smpc {
           internal_static_protocommunication_ScanMessage_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_protocommunication_ScanMessage_descriptor,
-              new java.lang.String[] { "Filter", "StartRow", "StopRow", "RequestID", "TargetPlayer", });
+              new java.lang.String[] { "Filter", "StartRow", "StopRow", "RequestID", "TargetPlayer", "FilterType", });
           return null;
         }
       };

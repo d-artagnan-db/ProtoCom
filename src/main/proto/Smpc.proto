@@ -29,6 +29,7 @@ message ScanMessage{
     required bytes stopRow = 3;
     required bytes requestID = 4;
     required sfixed32 targetPlayer = 5 ;
+    required string filterType = 6;
 }
 
 service ConcurrentScanService {
